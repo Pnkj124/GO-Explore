@@ -31,7 +31,7 @@ export class Tab2Page {
 
   async startScan() {
     const stream = await navigator.mediaDevices.getUserMedia({
-      video: {facingMode: 'environment'}
+      video: {facingMode: 'environment'},
     });
     this.videoElement.srcObject = stream;
     this.videoElement.setAttribute('playsinline', true); 

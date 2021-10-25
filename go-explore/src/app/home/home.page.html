@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      <img style="max-width: 300px; margin: 10px auto;" src="../assets/img/Tourism_Logo_v4.png">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="auth-form">
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+        <ion-button [routerLink]="['/registration']" expand="block" color="primary">Register</ion-button>
+
+        <span class="divider line one-line">or</span>
+
+        <span class="already">Already a user?</span>
+
+        <ion-button [routerLink]="['/login']" expand="block" color="danger">Sign In</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
