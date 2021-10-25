@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Go-explore",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

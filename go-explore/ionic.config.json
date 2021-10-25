@@ -1,0 +1,7 @@
+{
+  "name": "Go-explore",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
