@@ -1,0 +1,56 @@
+ion-content {
+    position: relative;
+    top: 5%;
+  }
+
+.welcome{
+    font-weight: bold;
+}
+
+.login-form {
+    @media screen and (min-width: 768px){
+        max-width: 50%;
+        margin: auto;
+        border: 5px solid var(--ion-color-goexplore-green);
+        border-radius: 14px;
+        margin-bottom: 10px;
+    }
+}
+
+.login-bt {
+    @media screen and (min-width: 768px){
+        max-width: 50%;
+        margin: auto;
+        margin-bottom: 10px;
+
+        :hover{
+            background-color: lightblue;
+        }
+    }
+}
+
+.sign-up {
+    @media screen and (min-width: 768px){
+        max-width: 50%;
+        margin: auto;
+        margin-bottom: 10px;
+
+        :hover{
+            background-color: lightblue;
+        }
+    }
+}
+
+h5 {
+    width: 85%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 20px auto; 
+ } 
+ 
+ h5 span { 
+     background:var(--ion-color-goexplore-white); 
+     padding:0 10px; 
+ }
+
