@@ -16,7 +16,7 @@
     reset 
   </ion-button>
 
-  <video #video [hidden]="!scanActive" height="85%"></video>
+  <video #video [hidden]="!scanActive" width="425px"></video>
   <canvas #canvas hidden></canvas>
 
   <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
