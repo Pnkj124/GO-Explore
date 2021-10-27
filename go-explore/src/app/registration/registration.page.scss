@@ -3,16 +3,17 @@ ion-content {
     top: 20%;
   }
 
-.login-form {
-    @media screen and (min-width: 768px){
-        max-width: 50%;
-        margin: auto;
-    }
+  .login-form {
+    max-width: 75%;
+    margin: auto;
+    border: 2px solid var(--ion-color-goexplore-green);
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 14px;
+    box-shadow: 1px 1px 5px 1px;
 }
 
 .login-bt {
-    @media screen and (min-width: 768px){
-        max-width: 50%;
-        margin: auto;
-    }
+    max-width: 65%;
+    margin: auto;
 }
