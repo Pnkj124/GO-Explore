@@ -17,3 +17,15 @@ ion-content {
     max-width: 65%;
     margin: auto;
 }
+
+ion-item{
+    margin: 10px auto;
+
+    ion-checkbox{
+        margin-right: 10px;
+
+        :before{
+            background-color: white!important;
+        }
+    }
+}
