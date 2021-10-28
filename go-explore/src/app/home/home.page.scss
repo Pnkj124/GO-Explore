@@ -32,15 +32,21 @@ ion-button {
 }
 
 h5 {
-    width: 85%; 
-    text-align: center; 
-    border-bottom: 1px solid #000; 
+    width: 85%;
+    text-align: center;
+    border-bottom: 1px solid #000;
     line-height: 0.1em;
-    margin: 20px auto; 
- } 
- 
- h5 span { 
-     background:var(--ion-color-goexplore-white); 
-     padding:0 10px; 
+    margin: 20px auto;
  }
 
+ h5 span {
+     background:var(--ion-color-goexplore-white);
+     padding:0 10px;
+ }
+
+ .icons{
+   height: 100%;
+   img{
+  padding: 2px;
+ }
+}
