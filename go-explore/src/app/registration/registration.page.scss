@@ -1,6 +1,6 @@
 ion-content {
     position: relative;
-    top: 20%;
+    top: 18%;
   }
 
   .login-form {
@@ -23,9 +23,5 @@ ion-item{
 
     ion-checkbox{
         margin-right: 10px;
-
-        :before{
-            background-color: white!important;
-        }
     }
 }
