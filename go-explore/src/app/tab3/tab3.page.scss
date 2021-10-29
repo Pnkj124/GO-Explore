@@ -1,4 +1,4 @@
-// HEADER STYLING START
+// Header Styling
 .profileHeaderTitle {
     color: #000;
     font-weight: bold;
@@ -26,9 +26,12 @@
     right: 20px;
     bottom: 25px;
 }
-// HEADER STYLING END
 
-
+// Profile picture styling
+.pfpPlaceholder {
+    max-width: 50%;
+    margin: 15px auto 0 auto;
+}
 
 // Level container and sub items styling
 .levelContainer {

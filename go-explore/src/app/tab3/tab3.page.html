@@ -2,7 +2,7 @@
   <ion-toolbar>
     <!-- <ion-img class="headerLogo" src="../assets/img/Tourism_Logo_v4.png"></ion-img> -->
     <ion-title class="ion-text-center profileHeaderTitle">PROFILE</ion-title>
-    <ion-img class="headerBackArrow" src="../assets/icon/arrowLeft.png"></ion-img>
+    <ion-img [routerLink]="['../tab1']" class="headerBackArrow" src="../assets/icon/arrowLeft.png"></ion-img>
     <ion-img class="headerDomkirkeIcon" src="../assets/icon/domkirkerGraphic.png"></ion-img>
     <ion-img class="headerGearIcon" src="../assets/icon/gearsIcon.png"></ion-img>
   </ion-toolbar>
@@ -10,53 +10,57 @@
 
 <ion-content [fullscreen]="true">
 
-<!-- Profile image upload -->
+  <!-- Profile image upload (temp løsning med billede) -->
+  <ion-img class="pfpPlaceholder" src="../assets/img/pfpPlaceholder.png"></ion-img>
+
+  <ion-button style="max-width: 50%; margin: 10px auto;" expand="block">Upload picture</ion-button>
 
 
 
+  <!-- Level container & sub items (Raw HTML) -->
+    <div class="levelContainer">
 
-<!-- Level container & sub items (Raw HTML) -->
-  <div class="levelContainer">
+      <div class="levelDisplay">
+        <p>LEVEL <b>11</b> <img class="levelSparkles" src="../assets/icon/sparkles-icon.svg"></p>
+      </div>
 
-    <div class="levelDisplay">
-      <p>LEVEL <b>11</b> <img class="levelSparkles" src="../assets/icon/sparkles-icon.svg"></p>
+      <div class="pointsLevel">
+        <p>
+          867/1000 pts.
+        </p>
+        <p>
+          LEVEL <b>12</b>
+        </p>
+      </div>
+
+      <div class="levelSlider">
+        <img class="levelSliderGraphic" src="../assets/img/levelSlider.png">
+      </div>
+
     </div>
+    
 
-    <div class="pointsLevel">
-      <p>
-        867/1000 pts.
-      </p>
-      <p>
-        LEVEL <b>12</b>
-      </p>
-    </div>
+  <!-- Username / password -->
+    <ion-title class="ion-text-center userPassTitle">Username: <b>JohnDoe22</b></ion-title>
 
-    <div class="levelSlider">
-      <img class="levelSliderGraphic" src="../assets/img/levelSlider.png">
-    </div>
-
-  </div>
-
-<!-- Username / password -->
-  <ion-title class="ion-text-center userPassTitle">Username: <b>JohnDoe22</b></ion-title>
-
-  <ion-title class="ion-text-center userPassTitle">Password: <b>********</b><u class="changeTxt">Change</u></ion-title>
+    <ion-title class="ion-text-center userPassTitle">Password: <b>********</b><u class="changeTxt">Change</u></ion-title>
 
 
-<!-- Badges & achivements -->
-  <ion-title class="ion-text-center achieveTitle">BADGES & ACHIEVEMENTS</ion-title>
+  <!-- Badges & achivements -->
+    <ion-title class="ion-text-center achieveTitle">BADGES & ACHIEVEMENTS</ion-title>
 
-  <ion-img class="badgesIcon" src="../assets/icon/badge-icon-green.png"></ion-img>
-
-
-<!-- Last visited locations -->
-  <ion-title class="ion-text-center locationTitle">LAST VISITED LOCATIONS</ion-title>
-
-  <ion-img [routerLink]="['../tab1']" class="lastLocationImages" src="../assets/img/last-locations-images.png"></ion-img>
+    <ion-img class="badgesIcon" src="../assets/icon/badge-icon-green.png"></ion-img>
 
 
-<!-- Privacy Policies / Logout -->
-<ion-title class="ion-text-center finePrintText">Privacy Policies</ion-title>
-<ion-title [routerLink]="['../../home']" class="ion-text-center finePrintText" style="margin-bottom: 15px;">Logout</ion-title>
+  <!-- Last visited locations -->
+    <ion-title class="ion-text-center locationTitle">LAST VISITED LOCATIONS</ion-title>
+
+    <ion-img [routerLink]="['../tab1']" class="lastLocationImages" src="../assets/img/last-locations-images.png"></ion-img>
+
+
+  <!-- Privacy Policies / Logout -->
+    <ion-title class="ion-text-center finePrintText">Privacy Policies</ion-title>
+    
+    <ion-title [routerLink]="['../../home']" class="ion-text-center finePrintText" style="margin-bottom: 15px;">Logout</ion-title>
 
 </ion-content>
