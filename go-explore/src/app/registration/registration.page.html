@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <img style="max-width: 200px; margin: 10px auto;" src="../assets/img/Tourism_Logo_v4.png">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item class="login-form" lines="none" color="goexplore-input-background">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item class="login-form" lines="none" color="goexplore-input-background">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item class="login-form" lines="none" color="goexplore-input-background">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item class="login-form" lines="none" color="goexplore-input-background">
+      <ion-label position="floating">Re-Type password</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+    <ion-item lines="none" color="white">
+      <ion-checkbox color="primary" style="border: 3px solid var(--ion-color-goexplore-green); border-radius: 5px;"></ion-checkbox>
+      <ion-text color="primary">I accept the Privacy Policy and Terms</ion-text>
+    </ion-item>
+  </ion-row>
+
+    <ion-row>
+      <ion-col class="login-bt">
+        <ion-button shape="round" type="submit" color="primary" expand="block">Sign Up</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

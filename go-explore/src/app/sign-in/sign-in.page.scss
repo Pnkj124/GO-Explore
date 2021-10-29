@@ -1,0 +1,19 @@
+ion-content {
+    position: relative;
+    top: 20%;
+  }
+
+.login-form {
+        max-width: 75%;
+        margin: auto;
+        border: 2px solid var(--ion-color-goexplore-green);
+        margin-bottom: 20px;
+        margin-top: 10px;
+        border-radius: 14px;
+        box-shadow: 1px 1px 5px 1px;
+}
+
+.login-bt {
+        max-width: 65%;
+        margin: auto;
+}
