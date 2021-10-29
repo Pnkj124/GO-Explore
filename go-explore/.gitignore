@@ -1,6 +1,12 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+# HOW TO USE COMPODOC: 
+# npm i -g @compodoc/compodoc
+# compodoc -p src/tsconfig.json
+# compodoc -s
+# http://127.0.0.1:8080
+
 *~
 *.sw[mnpcod]
 .tmp
@@ -29,3 +35,4 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+/documentation
