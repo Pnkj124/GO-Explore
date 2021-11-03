@@ -10,37 +10,98 @@
 </ion-header>
 
 <ion-content>
-  <form>
+  <form [formGroup]="validationForm">
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation 
+                            of validationMessages.Username">
+        <div class="error-message" *ngIf="validationForm.get('Username')
+             .hasError(validation.type) 
+             && (validationForm.get('Username').dirty 
+             || validationForm.get('Username').touched)">
+          <ion-icon name="flash"></ion-icon>
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
     <ion-item class="login-form" lines="none" color="goexplore-input-background">
       <ion-label position="floating">Username</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input formControlName="Username" type="Username"></ion-input>
     </ion-item>
 
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation 
+                            of validationMessages.Email">
+        <div class="error-message" *ngIf="validationForm.get('Email')
+             .hasError(validation.type) 
+             && (validationForm.get('Email').dirty 
+             || validationForm.get('Email').touched)">
+          <ion-icon name="flash"></ion-icon>
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
     <ion-item class="login-form" lines="none" color="goexplore-input-background">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input formControlName="Email" type="email"></ion-input>
     </ion-item>
 
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation 
+                            of validationMessages.Password">
+        <div class="error-message" *ngIf="validationForm.get('Password')
+             .hasError(validation.type) 
+             && (validationForm.get('Password').dirty 
+             || validationForm.get('Password').touched)">
+          <ion-icon name="flash"></ion-icon>
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
     <ion-item class="login-form" lines="none" color="goexplore-input-background">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input formControlName="Password" type="password"></ion-input>
     </ion-item>
 
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation 
+                            of validationMessages.Password">
+        <div class="error-message" *ngIf="validationForm.get('Password')
+             .hasError(validation.type) 
+             && (validationForm.get('Password').dirty 
+             || validationForm.get('Password').touched)">
+          <ion-icon name="flash"></ion-icon>
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
     <ion-item class="login-form" lines="none" color="goexplore-input-background">
       <ion-label position="floating">Re-Type password</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input formControlName="Password" type="password"></ion-input>
     </ion-item>
 
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation 
+                            of validationMessages.Terms">
+        <div class="error-message" *ngIf="validationForm.get('Terms')
+             .hasError(validation.type) 
+             && (validationForm.get('Terms').dirty 
+             || validationForm.get('Terms').touched)">
+          <ion-icon name="flash"></ion-icon>
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
     <ion-row>
     <ion-item lines="none" color="white">
-      <ion-checkbox color="primary" style="border: 3px solid var(--ion-color-goexplore-green); border-radius: 5px;"></ion-checkbox>
+      <ion-checkbox formControlName="Terms" color="primary" style="border: 3px solid var(--ion-color-goexplore-green); border-radius: 5px;"></ion-checkbox>
       <ion-text color="primary">I accept the Privacy Policy and Terms</ion-text>
     </ion-item>
   </ion-row>
 
     <ion-row>
       <ion-col class="login-bt">
-        <ion-button shape="round" type="submit" color="primary" expand="block">Sign Up</ion-button>
+        <ion-button shape="round" type="submit" color="primary" expand="block" [routerLink]="['../tabs']" routerDirection="root" [disabled]="!validationForm.valid" (click)="send(validationForm.value)">
+          Sign Up</ion-button>
       </ion-col>
     </ion-row>
   </form>
