@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, PatternValidator } from '@angular/forms';
+import { UsercrudService } from '../services/usercrud.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class RegistrationPage implements OnInit {
   request: any = { Language: 'english' };
   confirm: any;
 
-  constructor(public formBuilder: FormBuilder) { }
+  constructor(public formBuilder: FormBuilder, private userCrudService: UsercrudService) { }
   
   ngOnInit() 
     {
@@ -84,10 +85,20 @@ export class RegistrationPage implements OnInit {
 
   }
 
-  LognIn(values) {
-    this.request = values;
-    console.log(this.request);
-    this.confirm();
+  // LognIn(values) {
+  //   this.request = values;
+  //   console.log(this.request);
+  //   this.confirm();
+  // }
+
+  LogIn(){
+    const formValues = {
+      "username" : "halfdan",
+      "password" : "root"
+    }
+    this.userCrudService.createUser(formValues).subscribe((response) => {
+      console.log("from api response", response)
+    })
   }
 
 }
