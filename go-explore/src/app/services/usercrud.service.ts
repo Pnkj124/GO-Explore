@@ -14,7 +14,7 @@ export class User {
 })
 export class UsercrudService {
 
-  endpoint = 'http://localhost:3000/api/users';
+  registration_endpoint = 'http://localhost:3000/api/users/registration';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json', 'withCredentials': 'true' })
@@ -23,7 +23,7 @@ export class UsercrudService {
   constructor(private httpClient: HttpClient) { }
 
   createUser(user: User): Observable<any> {
-    return this.httpClient.post<User>(this.endpoint, JSON.stringify(user), this.httpOptions)
+    return this.httpClient.post<User>(this.registration_endpoint, JSON.stringify(user), this.httpOptions)
       .pipe(
         catchError(this.handleError<User>('Error occured'))
       );

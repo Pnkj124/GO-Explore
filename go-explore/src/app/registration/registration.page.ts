@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, PatternValidator } from '@angular/forms';
 import { UsercrudService } from '../services/usercrud.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,11 @@ export class RegistrationPage implements OnInit {
   request: any = { Language: 'english' };
   confirm: any;
 
-  constructor(public formBuilder: FormBuilder, private userCrudService: UsercrudService) { }
+  constructor(
+    public formBuilder: FormBuilder, 
+    private userCrudService: UsercrudService,
+    private router: Router,
+    ) { }
   
   ngOnInit() 
     {
@@ -91,14 +96,31 @@ export class RegistrationPage implements OnInit {
   //   this.confirm();
   // }
 
-  LogIn(){
-    const formValues = {
-      "username" : "halfdan",
-      "password" : "root"
+  LogIn() {
+    if (!this.validationForm.valid) {
+      return false;
+    } else {
+      const formValues = {
+        "username" : this.validationForm.value.Username,
+        "password" : this.validationForm.value.Password,
+        "email": this.validationForm.value.Email
+      }
+      this.userCrudService.createUser(formValues)
+        .subscribe((response) => {
+          console.log("from api response", response)
+          this.router.navigate(['../tabs']);
+        })
     }
-    this.userCrudService.createUser(formValues).subscribe((response) => {
-      console.log("from api response", response)
-    })
   }
+
+  // LogIn(){
+  //   const formValues = {
+  //     "username" : "halfdan",
+  //     "password" : "root"
+  //   }
+  //   this.userCrudService.createUser(formValues).subscribe((response) => {
+  //     console.log("from api response", response)
+  //   })
+  // }
 
 }
