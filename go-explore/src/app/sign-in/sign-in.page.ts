@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, PatternValidator } from '@angular/forms';
+import { UsercrudService } from '../services/usercrud.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -16,7 +18,9 @@ export class SignInPage implements OnInit {
   
 
   constructor(
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    private userCrudService: UsercrudService,
+    private router: Router,
   ) {
    }
 
@@ -66,9 +70,24 @@ export class SignInPage implements OnInit {
 
   }
 
-  LognIn(values) {
-    this.request = values;
-    console.log(this.request);
-    this.confirm();
+  LogIn() {
+    if (!this.validationForm.valid) {
+      return false;
+    } else {
+      const formValues = {
+        "email": this.validationForm.value.Email,
+        "password" : this.validationForm.value.Password
+      }
+      this.userCrudService.loginUser(formValues)
+        .subscribe((response) => {
+          console.log("from api response", response.success)
+          if(response.success == 0) {
+            console.log("Invalid username or password");
+          }
+          else {
+            this.router.navigate(['../tabs']);
+          }
+        })
+    }
   }
 }
