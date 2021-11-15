@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, PatternValidator } from '@angular/forms';
 import { UsercrudService } from '../services/usercrud.service';
 import { Router } from '@angular/router';
-
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-registration',
@@ -20,11 +20,13 @@ export class RegistrationPage implements OnInit {
     public formBuilder: FormBuilder, 
     private userCrudService: UsercrudService,
     private router: Router,
+    private storage: Storage
     ) { }
   
   ngOnInit() 
     {
       this.prepareFormValidation();
+      this.storage.create();
   }
 
   prepareFormValidation() {
@@ -90,12 +92,6 @@ export class RegistrationPage implements OnInit {
 
   }
 
-  // LognIn(values) {
-  //   this.request = values;
-  //   console.log(this.request);
-  //   this.confirm();
-  // }
-
   LogIn() {
     if (!this.validationForm.valid) {
       return false;
@@ -108,19 +104,10 @@ export class RegistrationPage implements OnInit {
       this.userCrudService.createUser(formValues)
         .subscribe((response) => {
           console.log("from api response", response)
+          this.storage.set('email', this.validationForm.value.Email);
           this.router.navigate(['../tabs']);
         })
     }
   }
-
-  // LogIn(){
-  //   const formValues = {
-  //     "username" : "halfdan",
-  //     "password" : "root"
-  //   }
-  //   this.userCrudService.createUser(formValues).subscribe((response) => {
-  //     console.log("from api response", response)
-  //   })
-  // }
 
 }

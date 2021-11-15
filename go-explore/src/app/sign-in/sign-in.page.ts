@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, PatternValidator } from '@angular/forms';
 import { UsercrudService } from '../services/usercrud.service';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-sign-in',
@@ -21,11 +22,13 @@ export class SignInPage implements OnInit {
     public formBuilder: FormBuilder,
     private userCrudService: UsercrudService,
     private router: Router,
+    private storage: Storage
   ) {
    }
 
   ngOnInit() {
     this.prepareFormValidation();
+    this.storage.create();
   }
 
   prepareFormValidation() {
@@ -85,6 +88,7 @@ export class SignInPage implements OnInit {
             console.log("Invalid username or password");
           }
           else {
+            this.storage.set('email', this.validationForm.value.Email);
             this.router.navigate(['../tabs']);
           }
         })

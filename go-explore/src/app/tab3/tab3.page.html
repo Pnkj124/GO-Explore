@@ -11,7 +11,8 @@
 <ion-content [fullscreen]="true">
 
   <!-- Profile image upload (temp løsning med billede) -->
-  <ion-img class="pfpPlaceholder" src="../assets/img/pfpPlaceholder.png"></ion-img>
+  <!-- <ion-img class="pfpPlaceholder" src="../assets/img/pfpPlaceholder.png"></ion-img> -->
+  <ion-img class="pfpPlaceholder" [src]='image' alt="Place image title"></ion-img>
   <input type="file" (change)="onFileChange($event)" />
   <ion-button style="max-width: 50%; margin: 10px auto;" expand="block" (click)="submitForm()">Upload picture</ion-button>
 
