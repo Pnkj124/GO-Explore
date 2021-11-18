@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="validationForm">
+  <form [formGroup]="validationForm" (ngSubmit)="LogIn()">
     <div class="validation-errors">
       <ng-container *ngFor="let validation 
                             of validationMessages.Username">
@@ -100,7 +100,7 @@
 
     <ion-row>
       <ion-col class="login-bt">
-        <ion-button shape="round" type="submit" color="primary" expand="block" [routerLink]="['../tabs']" routerDirection="root" [disabled]="!validationForm.valid" (click)="send(validationForm.value)">
+        <ion-button shape="round" type="submit" color="primary" expand="block"  routerDirection="root" [disabled]="!validationForm.valid" >
           Sign Up</ion-button>
       </ion-col>
     </ion-row>
