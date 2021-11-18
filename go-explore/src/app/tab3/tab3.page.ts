@@ -11,6 +11,8 @@ export class Tab3Page {
   private file: File;
   sanitizer: any;
   image: any;
+  badge_image: any;
+  username: any;
 
   constructor(private http: HttpClient, private storage: Storage){}
 
@@ -21,6 +23,15 @@ export class Tab3Page {
     this.http.get("http://localhost:3000/api/users/profile-picture", {headers: header, responseType: 'blob'}).subscribe((blob : any) => {
       let objectURL = URL.createObjectURL(blob);
       this.image = objectURL;
+    });
+
+    this.http.get("http://localhost:3000/api/users/badges", {headers: header, responseType: 'blob'}).subscribe((blob : any) => {
+      let objectURL = URL.createObjectURL(blob);
+      this.badge_image = objectURL;
+    });
+
+    this.http.get("http://localhost:3000/api/users/details", {headers: header}).subscribe((response : any) => {
+      this.username = response.username;
     });
   }
 
