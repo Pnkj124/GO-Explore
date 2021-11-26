@@ -1,14 +1,14 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component,OnInit, ElementRef, ViewChild } from '@angular/core';
 import { LoadingController, ToastController } from '@ionic/angular';
 import jsQR from 'jsqr';
 
-@Component({ 
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+@Component({
+  selector: 'app-qrscan',
+  templateUrl: './qrscan.page.html',
+  styleUrls: ['./qrscan.page.scss'],
 })
-export class Tab2Page {
+export class QrscanPage implements OnInit {
 
   scanActive = true; 
   scanResult = null; 
@@ -22,6 +22,8 @@ export class Tab2Page {
   loading: HTMLIonLoadingElement;
 
   constructor(private toastCtrl: ToastController, private loadingCtrl: LoadingController) {}
+
+  ngOnInit(){}
 
   ngAfterViewInit() {
     this.videoElement = this.video.nativeElement;

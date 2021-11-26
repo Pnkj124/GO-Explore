@@ -20,7 +20,19 @@ const routes: Routes = [
   {
     path: 'sign-in',
     loadChildren: () => import('./sign-in/sign-in.module').then( m => m.SignInPageModule)
+  },  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
   },
+  {
+    path: 'qrscan',
+    loadChildren: () => import('./qrscan/qrscan.module').then( m => m.QrscanPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+
 ];
 
 @NgModule({
