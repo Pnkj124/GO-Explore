@@ -91,13 +91,14 @@ export class Tab1Page {
   addMarkersToMap(markers){
     for (let marker of markers) {
       let position = new google.maps.LatLng(marker.latitude, marker.longitude);
+
       let mapMarker = new google.maps.Marker({
         position: position,
         title: marker.title,
         latitude: marker.latitude,
-        longitude: marker.longitude
+        longitude: marker.longitude,
+        animation: google.maps.Animation.DROP
       });
-
       mapMarker.setMap(this.map);
       this.addInfoWindowToMarker(mapMarker);
     }
