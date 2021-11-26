@@ -1,5 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 declare var google: any;
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,10 @@ declare var google: any;
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  lat: any; 
+  long: any;
+  address: any;
+  accuracy: any;
   
   map: any;
   @ViewChild('map', {read: ElementRef, static: false}) mapRef: ElementRef;
@@ -25,7 +31,23 @@ export class Tab1Page {
     }
   ];
 
-  constructor() {}
+  constructor(
+    private geolocation: Geolocation
+  ) {}
+
+  ngOnInit() {
+    this.geoInformation();
+  }
+
+  geoInformation() {
+    this.geolocation.getCurrentPosition().then((data) => {
+      this.lat = data.coords.latitude;
+      this.long = data.coords.longitude;
+      this.accuracy = data.coords.accuracy;
+     });
+
+     //console.log('from here ', this.geolocation.getCurrentPosition().then((data) => {data.coords.latitude}));
+  }
 
   ionViewDidEnter() {
     this.showMap();
@@ -73,7 +95,7 @@ export class Tab1Page {
 
 
   showMap() {
-    const location = new google.maps.LatLng(55.631118, 12.078712);
+    const location = new google.maps.LatLng(this.lat, this.long );
     const options = {
       center: location,
       zoom: 15,
