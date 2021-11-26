@@ -19,31 +19,66 @@ export class Tab1Page {
 
   infowindows: any = [];
   markers: any = [
-    {
-      title: "Halfdan's Home",
-      latitude: "55.40374801191922",
-      longitude: "11.352125104648161"
-    },
-    {
-      title: "school", 
-      latitude: "55.631118",
-      longitude: "12.078712"
-    }
-  ];
+      {
+      title: "Zealand Roskilde",
+      latitude: "55.63087610877062",
+      longitude: "12.078749778139647"
+      },
+      {
+      title: "ZBC Roskilde",
+      latitude: "55.627815858323196",
+      longitude: "12.078055085884328"
+      },
+      {
+      title: "HTX Roskilde",
+      latitude: "55.62528540644652",
+      longitude: "12.082877697551513"
+      },
+      {
+      title: "Roskilde Handelsskole",
+      latitude: "55.62659683996188",
+      longitude: "12.075673284475176"
+      },
+      {
+      title: "Roskilde Universitet",
+      latitude: "55.652251052251295",
+      longitude: "12.141006127192856"
+      },
+      {
+      title: "Himmerlev Gymnasium",
+      latitude: "55.6567060735931",
+      longitude: "12.112451329052622"
+      },
+      {
+      title: "Café Korn - Roskilde",
+      latitude: "55.64074898756519",
+      longitude: "12.076624971074732"
+      },
+      {
+      title: "Frellsen Chokolade Roskilde",
+      latitude: "55.64089204000676",
+      longitude: "12.07916099965007"
+      }
+    ];
 
   constructor(
     private geolocation: Geolocation
   ) {}
 
   ngOnInit() {
-    this.geoInformation();
+    this.geoInformation(this.markers);
   }
 
-  geoInformation() {
+  geoInformation(markers) {
     this.geolocation.getCurrentPosition().then((data) => {
       this.lat = data.coords.latitude;
       this.long = data.coords.longitude;
       this.accuracy = data.coords.accuracy;
+      markers.push({
+        title: "Your current location",
+        latitude: data.coords.latitude,
+        longitude: data.coords.longitude
+      })
      });
 
      //console.log('from here ', this.geolocation.getCurrentPosition().then((data) => {data.coords.latitude}));
