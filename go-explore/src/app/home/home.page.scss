@@ -46,7 +46,11 @@ h5 {
 
  .icons{
    height: 100%;
-   img{
-  padding: 2px;
+
+   img {
+    padding: 0;
+    width: 25px;
+    height: auto;
+    min-width: 22px;
  }
 }
