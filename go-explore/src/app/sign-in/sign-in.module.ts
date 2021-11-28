@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SignInPageRoutingModule } from './sign-in-routing.module';
 
 import { SignInPage } from './sign-in.page';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { SignInPage } from './sign-in.page';
     SignInPageRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    IonicStorageModule
   ],
   declarations: [SignInPage]
 })

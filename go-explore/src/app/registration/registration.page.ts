@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, PatternValidator } from '@angular/forms';
-
+import { UsercrudService } from '../services/usercrud.service';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-registration',
@@ -14,11 +16,17 @@ export class RegistrationPage implements OnInit {
   request: any = { Language: 'english' };
   confirm: any;
 
-  constructor(public formBuilder: FormBuilder) { }
+  constructor(
+    public formBuilder: FormBuilder, 
+    private userCrudService: UsercrudService,
+    private router: Router,
+    private storage: Storage
+    ) { }
   
   ngOnInit() 
     {
       this.prepareFormValidation();
+      this.storage.create();
   }
 
   prepareFormValidation() {
@@ -84,10 +92,22 @@ export class RegistrationPage implements OnInit {
 
   }
 
-  LognIn(values) {
-    this.request = values;
-    console.log(this.request);
-    this.confirm();
+  LogIn() {
+    if (!this.validationForm.valid) {
+      return false;
+    } else {
+      const formValues = {
+        "username" : this.validationForm.value.Username,
+        "password" : this.validationForm.value.Password,
+        "email": this.validationForm.value.Email
+      }
+      this.userCrudService.createUser(formValues)
+        .subscribe((response) => {
+          console.log("from api response", response)
+          this.storage.set('email', this.validationForm.value.Email);
+          this.router.navigate(['../tabs']);
+        })
+    }
   }
 
 }
