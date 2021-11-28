@@ -1,133 +1,175 @@
-// Header Styling
-.profileHeaderTitle {
-    color: #000;
-    font-weight: bold;
-    font-size: 30px;
-    margin: 25px 15px 25px auto;
-}
+$primary :#1d805f;
 
-.headerDomkirkeIcon {
-    height: 50px;
-    position: fixed;
-    right: 100px;
-    bottom: 12px;
-}
+//
+//// Header Styling
+//.profileHeaderTitle {
+//  color: #000;
+//  font-weight: bold;
+//  font-size: 30px;
+//  margin: 25px 15px 25px auto;
+//}
+//
+//.headerDomkirkeIcon {
+//  height: 50px;
+//  position: fixed;
+//  right: 100px;
+//  bottom: 12px;
+//}
 
-.headerBackArrow {
-    height: 30px;
-    position: fixed;
-    left: 20px;
-    bottom: 25px;
-}
+//.headerBackArrow {
+//  height: 30px;
+//  position: fixed;
+//  left: 20px;
+//  bottom: 25px;
+//}
 
-.headerGearIcon {
-    height: 30px;
-    position: fixed;
-    right: 20px;
-    bottom: 25px;
-}
+//.headerGearIcon {
+//  height: 30px;
+//  position: fixed;
+//  right: 20px;
+//  bottom: 25px;
+//}
 
-// Profile picture styling
-.pfpPlaceholder {
-    max-width: 50%;
-    margin: 15px auto 0 auto;
-}
+//// Profile picture styling
+//.pfpPlaceholder {
+//  max-width: 50%;
+//  margin: 15px auto 0 auto;
+//}
 
 // Level container and sub items styling
 .levelContainer {
-    background: var(--ion-color-goexplore-green);
-    height: auto;
-    padding-bottom: 14px;
-    max-width: 700px;
-    margin: 20px auto 10px auto;
-    display: block;
+  background: var(--ion-color-goexplore-green);
+  height: auto;
+  padding-bottom: 14px;
+  max-width: 700px;
+  margin: 20px auto 10px auto;
+  display: block;
 
-    .levelDisplay {
-        display: flex;
-        align-items: center;
+  .levelDisplay {
+    display: flex;
+    align-items: center;
 
-        .levelSparkles {
-            height: 30px;
-            vertical-align: top;
-            margin-left: 7px;
-        }
-
-        p {
-            font-size: 28px;
-            margin: 5px auto;
-            display: block;
-            color: var(--ion-color-goexplore-white);
-        }
+    .levelSparkles {
+      height: 30px;
+      vertical-align: top;
+      margin-left: 7px;
     }
 
-    .pointsLevel {
-        display: flex;
-        // padding-bottom: 10px;
-
-        p {
-            margin: 0 auto;
-            font-size: 14px;
-            color: var(--ion-color-goexplore-white);
-        }
+    p {
+      font-size: 28px;
+      margin: 5px auto;
+      display: block;
+      color: var(--ion-color-goexplore-white);
     }
+  }
 
-    .levelSlider {
+  .pointsLevel {
+    display: flex;
+    // padding-bottom: 10px;
 
-        .levelSliderGraphic {
-            margin: 0 auto;
-            display: block;
-        }
+    p {
+      margin: 0 auto;
+      font-size: 14px;
+      color: var(--ion-color-goexplore-white);
     }
-}
+  }
 
-.userPassTitle {
-    font-size: 28px;
-    font-weight: 400;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border-bottom: black solid 2px;
-}
+  .levelSlider {
 
-.changeTxt {
-    color: var(--ion-color-goexplore-green);
-    font-size: 14px;
-    margin-left: 15px;
-    vertical-align: middle;
+    .levelSliderGraphic {
+      margin: 0 auto;
+      display: block;
+    }
+  }
 }
+//
+//.userPassTitle {
+//  font-size: 28px;
+//  font-weight: 400;
+//  padding-bottom: 10px;
+//  padding-top: 10px;
+//  border-bottom: black solid 2px;
+//}
+//
+//.changeTxt {
+//  color: var(--ion-color-goexplore-green);
+//  font-size: 14px;
+//  margin-left: 15px;
+//  vertical-align: middle;
+//}
 
-.achieveTitle {
-    margin-top: 25px;
-    font-size: 25px;
-    font-weight: bold;
-}
+//.achieveTitle {
+//  margin-top: 25px;
+//  font-size: 25px;
+//  font-weight: bold;
+//}
 
-.badgesIcon {
-    max-width: 10%;
-    margin: 0 auto;
-    display: block;
-    margin-top: 20px;
-    border-bottom: black solid 2px;
-    padding-bottom: 20px;
-}
+//.badgesIcon {
+//  max-width: 10%;
+//  margin: 0 auto;
+//  display: block;
+//  margin-top: 20px;
+//  border-bottom: black solid 2px;
+//  padding-bottom: 20px;
+//}
 
 .locationTitle {
-    margin-top: 25px;
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  margin-top: 25px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .lastLocationImages {
-    display: block;
-    margin: 0 auto;
-    max-width: 80%;
-    border-bottom: black solid 2px;
-    padding-bottom: 20px;
-    margin-bottom: 75px;
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  border-bottom: black solid 2px;
+  padding-bottom: 20px;
+  margin-bottom: 75px;
 }
 
 .finePrintText {
-    font-size: 15px;
-    text-decoration: underline;
-    color: #5B6F7D;
+  font-size: 15px;
+  text-decoration: underline;
+  color: #5B6F7D;
 }
+
+.profile__container{
+  height: 150px;
+  color: #fff;
+  font-family: "Pacifico", sans-serif !important;
+  position: relative;
+  text-align: center;
+}
+
+.profile__container:before{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $primary;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  transform: scaleX(1.5);
+  margin-top: -25px;
+  z-index: -1;
+}
+
+
+.profile__image {
+  width: 120px;
+  height: 120px;
+  max-height: 120px;
+  min-height: 120px;
+  border-radius: 50%;
+  margin: 30px auto 0 auto;
+  border: 3px solid #fff;
+}
+
+.profile__heading__text{
+  margin:0;
+  color: $primary;
+}
+

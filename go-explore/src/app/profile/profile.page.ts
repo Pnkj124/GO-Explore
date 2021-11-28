@@ -16,6 +16,8 @@ export class ProfilePage implements OnInit {
   image: any;
   badge_image: any;
   username: any;
+  level: any = 12;
+  points: any = 1178;
 
   constructor(private http: HttpClient, private storage: Storage) { }
 
