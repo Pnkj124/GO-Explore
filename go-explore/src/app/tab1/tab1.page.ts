@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+
+declare var google: any;
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,11 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  map: any;
+  @ViewChild('map', {read: ElementRef, static: false}) mapRef: ElementRef;
+
   constructor() {}
+
+
 
 }
