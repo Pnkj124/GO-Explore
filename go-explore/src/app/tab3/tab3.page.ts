@@ -8,17 +8,24 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  private file: File;
+
+  title = 'Profile';
+  alt = 'Profile';
   sanitizer: any;
   image: any;
-  badge_image: any;
-  username: any;
+  badgeImage: any;
+  username: any = '';
+  level: any = 12;
+  points: any = 1178;
+
+  private file: File;
+
 
   constructor(private http: HttpClient, private storage: Storage){}
 
   async ngOnInit() {
     await this.storage.create();
-    const email = await this.storage.get('email')
+    const email = await this.storage.get('email') || 'chaudharypankaj.official@gmail.com'
     const header = { 'email': email}
     this.http.get("http://localhost:3000/api/users/profile-picture", {headers: header, responseType: 'blob'}).subscribe((blob : any) => {
       let objectURL = URL.createObjectURL(blob);
@@ -27,7 +34,7 @@ export class Tab3Page {
 
     this.http.get("http://localhost:3000/api/users/badges", {headers: header, responseType: 'blob'}).subscribe((blob : any) => {
       let objectURL = URL.createObjectURL(blob);
-      this.badge_image = objectURL;
+      this.badgeImage = objectURL;
     });
 
     this.http.get("http://localhost:3000/api/users/details", {headers: header}).subscribe((response : any) => {
@@ -40,7 +47,7 @@ export class Tab3Page {
   }
 
   async submitForm(){
-    const email = await this.storage.get('email')
+    const email = await this.storage.get('email') || 'chaudharypankaj.official@gmail.com'
     let formData = new FormData();
     formData.append("profile_picture", this.file, this.file.name)
     formData.append("email", email)
