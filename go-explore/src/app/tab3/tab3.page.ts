@@ -25,7 +25,7 @@ export class Tab3Page {
 
   async ngOnInit() {
     await this.storage.create();
-    const email = await this.storage.get('email') || 'chaudharypankaj.official@gmail.com'
+    const email = await this.storage.get('email')
     const header = { 'email': email}
     this.http.get("http://localhost:3000/api/users/profile-picture", {headers: header, responseType: 'blob'}).subscribe((blob : any) => {
       let objectURL = URL.createObjectURL(blob);
@@ -47,7 +47,7 @@ export class Tab3Page {
   }
 
   async submitForm(){
-    const email = await this.storage.get('email') || 'chaudharypankaj.official@gmail.com'
+    const email = await this.storage.get('email')
     let formData = new FormData();
     formData.append("profile_picture", this.file, this.file.name)
     formData.append("email", email)
