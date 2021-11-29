@@ -81,11 +81,11 @@ export class RegistrationPage implements OnInit {
       'Password': [
         {
           type: 'required',
-          message: 'Password is required'
+          message: 'Password is required.'
         },
         {
           type: 'pattern',
-          message: 'Invalid password'
+          message: 'Invalid password.'
         }
       ]
     }
