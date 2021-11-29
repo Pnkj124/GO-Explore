@@ -4,15 +4,18 @@
   <app-header [title]="title" ></app-header>
 
   <div class="card__section profile__container">
-    <!-- <img [src]="image" [alt]="alt" onError="this.src='https://cdn.statically.io/avatar/shape=circle/GE'" class="profile__image"> -->
-    <img [src]="image" [alt]="alt" onError="this.src='https://avatars.githubusercontent.com/u/67068794?v=4'" class="profile__image">
+    <form  #form="ngForm">
+      <input type="file" (change)="onFileChange($event)"  />
+      <ion-img [src]="image" alt="alt" class="profile__image"></ion-img>
+      <ion-badge color="primary" class="image__upload__icon" (click)="submitForm()"><ion-icon name="camera"></ion-icon></ion-badge>
+    </form>
   </div>
 
   <ion-grid>
     <ion-row class="ion-text-center">
       <ion-col size="12">
         <ion-text>
-          <h2 class="profile__heading__text">{{username}} Pankaj Chaudhary</h2>
+          <h2 class="profile__heading__text">{{username}} <ion-icon name="checkmark-circle-sharp"></ion-icon></h2>
           <ion-chip color="success">
             <ion-label>
               <ion-icon name="ribbon"></ion-icon>
@@ -23,57 +26,62 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-row>
 
-  </ion-row>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>LEVEL <b>{{level}}</b> <img class="levelSparkles" src="../assets/icon/sparkles-icon.svg"></ion-card-subtitle>
-      </ion-card-header>
-  
-      <ion-card-content>
-      
+
+  <!-- Level container & sub items (Raw HTML) -->
+  <div class="levelContainer">
+
+    <div class="levelDisplay">
+      <p>LEVEL <b>{{level}}</b> <img class="levelSparkles" src="../assets/icon/sparkles-icon.svg"></p>
+    </div>
+
     <div class="pointsLevel">
       <p>
         {{points}} pts.
       </p>
       <p>
-        LEVEL <b>{{level}}</b>
+        {{points}} pts.
       </p>
     </div>
 
     <div class="levelSlider">
-      <ion-progress-bar color="primary" value="0.5"></ion-progress-bar>
+      <img class="levelSliderGraphic" src="../assets/img/levelSlider.png">
+    </div>
 
-      <img class="levelSliderGraphic" src="../assets/img/levelSlider.png"></div>
-      </ion-card-content>
-    </ion-card>
+  </div>
 
     <ion-card>
       <ion-card-header>
         <ion-card-subtitle>BADGES & ACHIEVEMENTS</ion-card-subtitle>
       </ion-card-header>
-  
+
       <ion-card-content>
-      
-        <ion-img class="badgesIcon" src="../assets/icon/badge-icon-green.png"></ion-img>
-        <ion-img class="badgesIcon" [src]='badge_image' alt="basic badge image"></ion-img>
+        <ion-icon name="ribbon" class="badge primary-badge"></ion-icon>
+        <ion-icon name="ribbon" class="badge"></ion-icon>
+        <ion-icon name="ribbon" class="badge"></ion-icon>
+        <ion-icon name="ribbon" class="badge"></ion-icon>
       </ion-card-content>
     </ion-card>
-  
+
 
     <ion-card>
       <ion-card-header>
         <ion-card-subtitle>LAST VISITED LOCATION</ion-card-subtitle>
       </ion-card-header>
-  
+
       <ion-card-content>
-      
-      <ion-img [routerLink]="['../tab1']" class="lastLocationImages" src="../assets/img/last-locations-images.png"></ion-img>
+
+        <ion-row>
+<!--           should iterate via loop when fetching visited location-->
+          <ion-col size="3"><ion-img [routerLink]="['../tab1']" class="lastLocationImages" src="../assets/img/museum.png"></ion-img></ion-col>
+          <ion-col size="3"><ion-img [routerLink]="['../tab1']" class="lastLocationImages" src="../assets/img/jars.png"></ion-img></ion-col>
+          <ion-col size="3"><ion-img [routerLink]="['../tab1']" class="lastLocationImages" src="../assets/img/cathedral.png"></ion-img></ion-col>
+          <ion-col size="3"><ion-img [routerLink]="['../tab1']" class="lastLocationImages" src="../assets/img/lake.png"></ion-img></ion-col>
+        </ion-row>
       </ion-card-content>
     </ion-card>
 
-    <ion-grid>
+    <ion-grid class="other__setting">
       <ion-row>
         <ion-col>
           <ion-list>
@@ -96,29 +104,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  
-    <!-- <ion-card>
-      <ion-card-header>
-        <ion-card-title>PRIVACY POLICIES</ion-card-title>
-      </ion-card-header>
-  
-      <ion-card-content>
-      
-      <ion-img [routerLink]="['../tab1']" class="lastLocationImages" src="../assets/img/last-locations-images.png"></ion-img>
-      </ion-card-content>
-    </ion-card>
-
-    <h2 class="ion-text-center finePrintText">Privacy Policies</h2>
-
-    <h2 [routerLink]="['../../home']" class="ion-text-center finePrintText" style="margin-bottom: 15px;">Logout</h2>
-   -->
-
-  <!-- <ion-img class="pfpPlaceholder" [src]='image' alt="Place image title"></ion-img>
-  <div style="margin-left: 7.5rem; margin-top: 1rem;">
-    <input type="file" (change)="onFileChange($event)" />
-  </div>
-  <ion-button style="max-width: 50%; margin: 10px auto;" expand="block" (click)="submitForm()">Upload picture</ion-button>
- -->
 
 
 </ion-content>
