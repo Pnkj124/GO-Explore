@@ -11,7 +11,7 @@
 
 <ion-content>
 
-  <form [formGroup]="validationForm">
+  <form [formGroup]="validationForm" (ngSubmit)="LogIn()">
 
 <div class="validation-errors">
       <ng-container *ngFor="let validation 
@@ -27,7 +27,7 @@
     </div>
 
     <ion-item class="login-form" lines="none" color="goexplore-input-background">
-      <ion-label position="floating">Email</ion-label>
+      <ion-label style="color: #5B6F7D;" position="floating">Email</ion-label>
       <ion-input formControlName="Email" type="email">
       </ion-input>
     </ion-item>
@@ -46,13 +46,13 @@
     </div>
 
   <ion-item class="login-form" lines="none" color="goexplore-input-background">
-    <ion-label position="floating">Password</ion-label>
+    <ion-label style="color: #5B6F7D;" position="floating">Password</ion-label>
     <ion-input formControlName="Password" type="Password" required></ion-input>
   </ion-item>
 
   <ion-row>
     <ion-col class="login-bt">
-      <ion-button shape="round" type="submit" color="primary" expand="block" [routerLink]="['../tabs']" routerDirection="root" [disabled]="!validationForm.valid" (click)="send(validationForm.value)">
+      <ion-button shape="round" type="submit" color="primary" expand="block"  routerDirection="root" [disabled]="!validationForm.valid" >
         Log in</ion-button>
     </ion-col>
   </ion-row>

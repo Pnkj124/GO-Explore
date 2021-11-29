@@ -11,11 +11,17 @@ import { AppComponent } from './app.component';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
+// Import
+import { HttpClientModule } from '@angular/common/http';
+
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot()],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, NativeGeocoder, Geolocation],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}
