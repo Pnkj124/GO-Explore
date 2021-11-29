@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <img style="max-width: 250px; margin: 10px auto;" src="../assets/img/Tourism_Logo_v4.png">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="validationForm" (ngSubmit)="LogIn()">
+
+<div class="validation-errors">
+      <ng-container *ngFor="let validation 
+                            of validationMessages.Email">
+        <div class="error-message" *ngIf="validationForm.get('Email')
+             .hasError(validation.type) 
+             && (validationForm.get('Email').dirty 
+             || validationForm.get('Email').touched)">
+          <ion-icon name="flash"></ion-icon>
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item class="login-form" lines="none" color="goexplore-input-background">
+      <ion-label style="color: #5B6F7D;" position="floating">Email</ion-label>
+      <ion-input formControlName="Email" type="email">
+      </ion-input>
+    </ion-item>
+    
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation 
+                            of validationMessages.Password">
+        <div class="error-message" *ngIf="validationForm.get('Password')
+             .hasError(validation.type) 
+             && (validationForm.get('Password').dirty 
+             || validationForm.get('Password').touched)">
+          <ion-icon name="flash"></ion-icon>
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+  <ion-item class="login-form" lines="none" color="goexplore-input-background">
+    <ion-label style="color: #5B6F7D;" position="floating">Password</ion-label>
+    <ion-input formControlName="Password" type="Password" required></ion-input>
+  </ion-item>
+
+  <ion-row>
+    <ion-col class="login-bt">
+      <ion-button shape="round" type="submit" color="primary" expand="block"  routerDirection="root" [disabled]="!validationForm.valid" >
+        Log in</ion-button>
+    </ion-col>
+  </ion-row>
+
+</form>
+
+</ion-content>

@@ -1,0 +1,31 @@
+ion-content {
+    position: relative;
+    top: 18%;
+  }
+
+  .login-form {
+    max-width: 75%;
+    margin: auto;
+    border: 2px solid var(--ion-color-goexplore-green);
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 14px;
+    // box-shadow: 1px 1px 5px 1px;
+}
+
+.login-bt {
+    max-width: 65%;
+    margin: auto;
+}
+
+ion-item{
+    margin: 10px auto;
+
+    ion-checkbox{
+        margin-right: 10px;
+    }
+}
+
+.validation-errors {
+    margin-left: 60px;
+}

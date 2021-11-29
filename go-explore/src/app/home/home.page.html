@@ -1,0 +1,92 @@
+<ion-content class="auth-form">
+
+  <ion-header>
+    <ion-title class="ion-text-center welcome">
+      WELCOME TO
+    </ion-title>
+  </ion-header>
+
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      <img style="max-width: 250px; margin: 10px auto;" src="../assets/img/Tourism_Logo_v4.png">
+    </ion-title>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-title>
+          <p>Sign up below to begin your adventure!</p>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+  <form>
+  <ion-row>
+    <ion-col class="sign-up">
+      <ion-button shape="round" type="submit" color="light" expand="block" [routerLink]="['../tabs']" routerDirection="root">
+        <ion-col size="2" class="icons">
+          <img src="../../assets/icon/Image_11.svg">
+      </ion-col>
+      <ion-col size="10">
+        <ion-text>
+          <small>sign up with apple</small>
+        </ion-text>
+        </ion-col>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="sign-up">
+      <ion-button shape="round" class="gg-bt" type="submit" color="gg-bt" expand="block" [routerLink]="['../tabs']" routerDirection="root">
+        <ion-col size="2" class="icons">
+        <img src="../../assets/icon/Image_7.png">
+        </ion-col>
+        <ion-col size="10">
+        <ion-text>
+          <small>sign up with Google</small>
+        </ion-text>
+      </ion-col>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="sign-up">
+      <ion-button shape="round" class="fb-bt" type="submit" color="fb-bt" expand="block" [routerLink]="['../tabs']" routerDirection="root">
+        <ion-col size="2" class="icons">
+        <img src="../../assets/icon/Image_8.png">
+      </ion-col>
+      <ion-col size="10">
+        <ion-text>
+          <small>sign up with Facebook</small>
+        </ion-text>
+      </ion-col>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <h5><span>or</span></h5>
+
+  <ion-row>
+    <ion-col class="sign-up">
+      <ion-button shape="round" [routerLink]="['/registration']" expand="block" color="light">
+        <ion-text>
+          <small>sign up with e-mail</small>
+        </ion-text>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <a [routerLink]="['/sign-in']" expand="block"><small>Already have an account? Log in</small></a>
+    </ion-col>
+  </ion-row>
+
+</form>
+
+
+
+
+
+</ion-content>
