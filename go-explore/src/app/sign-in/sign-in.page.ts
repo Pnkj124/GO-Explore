@@ -62,7 +62,7 @@ export class SignInPage implements OnInit {
       'Password': [
         {
           type: 'required',
-          message: 'Password is required'
+          message: 'Password is required.'
         },
         {
           type: 'pattern',
