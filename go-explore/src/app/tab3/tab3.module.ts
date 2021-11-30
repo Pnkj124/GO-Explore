@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { HeaderComponent } from '../components/header/header.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     Tab3PageRoutingModule,
     IonicStorageModule
   ],
-  declarations: [Tab3Page]
+  declarations: [Tab3Page,HeaderComponent]
 })
 export class Tab3PageModule {}
