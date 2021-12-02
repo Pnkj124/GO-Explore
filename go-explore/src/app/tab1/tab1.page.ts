@@ -1,6 +1,11 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+
+import {HttpClient} from "@angular/common/http";
+import { Tab2Page } from '../tab2/tab2.page';
 
 declare var google: any;
 @Component({
@@ -62,11 +67,16 @@ export class Tab1Page {
     ];
 
   constructor(
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    private http: HttpClient,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.geoInformation(this.markers);
+    this.http.get("http://localhost:3000/api/users/locations").subscribe((response : any) => {
+      console.log(response)
+    });
   }
 
   geoInformation(markers) {
@@ -109,7 +119,7 @@ export class Tab1Page {
                             '<h2 id="firstHeading" class="firstHeading">' + marker.title + '</h2>' +
                             '<p>Latitude: ' + marker.latitude + '</p>' + 
                             '<p>Longitude: ' + marker.longitude + '</p>' + 
-                            '<ion-button id="navigate">Direction</ion-button>' +
+                            '<ion-button id="navigate">Go scan</ion-button>' +
                             '</div>';
 
     let infoWindow = new google.maps.InfoWindow({
@@ -119,6 +129,11 @@ export class Tab1Page {
     marker.addListener('click', () => {
       this.closeAllInfoWindows();
       infoWindow.open(this.map, marker);
+      google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
+        document.getElementById('navigate').addEventListener('click', () => {
+        this.router.navigate(['../tabs/tab2']);
+        })
+        });
     });
     this.infowindows.push(infoWindow);
   }
