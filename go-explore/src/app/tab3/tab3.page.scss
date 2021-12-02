@@ -1,133 +1,213 @@
+$primary :#1d805f;
+
+
 // Header Styling
 .profileHeaderTitle {
-    color: #000;
-    font-weight: bold;
-    font-size: 30px;
-    margin: 25px 15px 25px auto;
+  color: #000;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 25px 15px 25px auto;
 }
 
 .headerDomkirkeIcon {
-    height: 50px;
-    position: fixed;
-    right: 100px;
-    bottom: 12px;
+  height: 50px;
+  position: fixed;
+  right: 100px;
+  bottom: 12px;
 }
 
 .headerBackArrow {
-    height: 30px;
-    position: fixed;
-    left: 20px;
-    bottom: 25px;
+  height: 30px;
+  position: fixed;
+  left: 20px;
+  bottom: 25px;
 }
 
 .headerGearIcon {
-    height: 30px;
-    position: fixed;
-    right: 20px;
-    bottom: 25px;
+  height: 30px;
+  position: fixed;
+  right: 20px;
+  bottom: 25px;
 }
 
 // Profile picture styling
 .pfpPlaceholder {
-    max-width: 50%;
-    margin: 15px auto 0 auto;
+  max-width: 50%;
+  margin: 15px auto 0 auto;
 }
 
 // Level container and sub items styling
 .levelContainer {
-    background: var(--ion-color-goexplore-green);
-    height: auto;
-    padding-bottom: 14px;
-    max-width: 700px;
-    margin: 20px auto 10px auto;
-    display: block;
+  background: var(--ion-color-goexplore-green);
+  height: auto;
+  padding-bottom: 14px;
+  max-width: 700px;
+  margin: 20px auto 10px auto;
+  display: block;
 
-    .levelDisplay {
-        display: flex;
-        align-items: center;
+  .levelDisplay {
+    display: flex;
+    align-items: center;
 
-        .levelSparkles {
-            height: 30px;
-            vertical-align: top;
-            margin-left: 7px;
-        }
-
-        p {
-            font-size: 28px;
-            margin: 5px auto;
-            display: block;
-            color: var(--ion-color-goexplore-white);
-        }
+    .levelSparkles {
+      height: 30px;
+      vertical-align: top;
+      margin-left: 7px;
     }
 
-    .pointsLevel {
-        display: flex;
-        // padding-bottom: 10px;
-
-        p {
-            margin: 0 auto;
-            font-size: 14px;
-            color: var(--ion-color-goexplore-white);
-        }
+    p {
+      font-size: 28px;
+      margin: 5px auto;
+      display: block;
+      color: var(--ion-color-goexplore-white);
     }
+  }
 
-    .levelSlider {
+  .pointsLevel {
+    display: flex;
+    // padding-bottom: 10px;
 
-        .levelSliderGraphic {
-            margin: 0 auto;
-            display: block;
-        }
+    p {
+      margin: 0 auto;
+      font-size: 14px;
+      color: var(--ion-color-goexplore-white);
     }
+  }
+
+  .levelSlider {
+
+    .levelSliderGraphic {
+      margin: 0 auto;
+      display: block;
+    }
+  }
 }
 
 .userPassTitle {
-    font-size: 28px;
-    font-weight: 400;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border-bottom: black solid 2px;
+  font-size: 28px;
+  font-weight: 400;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: black solid 2px;
 }
 
 .changeTxt {
-    color: var(--ion-color-goexplore-green);
-    font-size: 14px;
-    margin-left: 15px;
-    vertical-align: middle;
+  color: var(--ion-color-goexplore-green);
+  font-size: 14px;
+  margin-left: 15px;
+  vertical-align: middle;
 }
 
 .achieveTitle {
-    margin-top: 25px;
-    font-size: 25px;
-    font-weight: bold;
+  margin-top: 25px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .badgesIcon {
-    max-width: 10%;
-    margin: 0 auto;
-    display: block;
-    margin-top: 20px;
-    border-bottom: black solid 2px;
-    padding-bottom: 20px;
+  max-width: 10%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+  border-bottom: black solid 2px;
+  padding-bottom: 20px;
 }
 
 .locationTitle {
-    margin-top: 25px;
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  margin-top: 25px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .lastLocationImages {
-    display: block;
-    margin: 0 auto;
-    max-width: 80%;
-    border-bottom: black solid 2px;
-    padding-bottom: 20px;
-    margin-bottom: 75px;
+  //display: block;
+  //margin: 0 auto;
+  //max-width: 80%;
+  //border-bottom: black solid 2px;
+  //padding-bottom: 20px;
+  //margin-bottom: 75px;
 }
 
 .finePrintText {
-    font-size: 15px;
-    text-decoration: underline;
-    color: #5B6F7D;
+  font-size: 15px;
+  text-decoration: underline;
+  color: #5B6F7D;
+}
+
+.profile__container{
+  height: 150px;
+  color: #fff;
+  font-family: "Pacifico", sans-serif !important;
+  position: relative;
+  text-align: center;
+  margin-bottom: -30px;
+}
+
+.profile__container:before{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $primary;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  transform: scaleX(1.5);
+  margin-top: -55px;
+  z-index: -1;
+}
+
+//::ng-deep ion-img img {
+//  width:40px!important;
+//  height:40px!important;
+//}
+
+.profile__image{
+  width: 120px;
+  height: 120px;
+  max-height: 120px;
+  min-height: 120px;
+  border-radius: 50% !important;
+  overflow: hidden;
+  margin: 30px auto 0 auto;
+  border: 3px solid #fff;
+
+}
+
+input[type=file]{
+  height:120px;
+  opacity:0;
+  border:1px solid #000;
+  width:120px;
+  position:absolute;
+  margin-left:-60px;
+}
+
+.profile__heading__text{
+  margin:0;
+  color: $primary;
+}
+
+.badge{
+  font-size: 36px;
+  color:#b3b3b3;
+}
+
+.primary-badge{
+  color:goldenrod;
+}
+
+.other__setting{
+  color: #6c6c6c;
+}
+
+.image__upload__icon{
+    position: absolute;
+  height: 30px;
+    bottom: 0;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-bottom: 40px;
 }

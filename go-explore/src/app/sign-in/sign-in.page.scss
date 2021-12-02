@@ -1,24 +1,84 @@
-ion-content {
-    position: relative;
-    top: 20%;
-  }
+ion-item {
+        box-shadow: 1px 1px 5px rgb(236, 236, 236);
+}
 
 .login-form {
         max-width: 75%;
         margin: auto;
-        border: 2px solid var(--ion-color-goexplore-green);
+        --background: #fff;
         margin-bottom: 20px;
-        margin-top: 10px;
-        border-radius: 14px;
-        // box-shadow: 1px 1px 5px 1px;
+        border-radius: 8px;
 }
 
 .login-bt {
-        max-width: 65%;
-        margin: auto;
+        max-width: 75%;
+        margin: 8px auto;
+        padding: 0 !important;
+}
+
+ion-button {
+        height: 48px;
 }
 
 .validation-errors {
-        margin-left: 60px;
-        color: red;
+        color: #eb445a;
+        margin: 4px 0;
+}
+
+ion-card-subtitle {
+        margin: 16px 0;
+        font-size: medium;
+        color: #858585;
+        margin-left: 55px;
+        font-weight: normal;
+}
+
+.content__center {
+        margin-top: 15%;
+}
+
+.login__form {
+        margin-top: 48px;
+}
+
+.validation-errors {
+        text-align: left;
+        margin-left: 50px;
+}
+
+h5 {
+        color: #858585;
+        width: 75%;
+        text-align: center;
+        line-height: 0.1em;
+        margin: 20px auto;
+        font-weight: normal;
+}
+
+h5 span {
+        background: #fff;
+        padding: 0 10px;
+}
+
+.social__section {
+        max-width: 75%;
+        margin: auto;
+}
+
+.social__icon {
+        --background: #fff;
+        --box-shadow: 1px 1px 5px rgb(236, 236, 236);
+        font-size: medium;
+}
+
+.icon__google {
+        color: #eb445a;
+}
+
+.icon__facebook {
+        color: #2e2eff;
+}
+
+.icon__apple {
+        color: rgb(47, 47, 47);
 }
