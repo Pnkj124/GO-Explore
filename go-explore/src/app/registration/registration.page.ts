@@ -11,6 +11,7 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class RegistrationPage implements OnInit {
 
+  title= 'Sign Up';
   validationMessages: any;
   validationForm: FormGroup;
   request: any = { Language: 'english' };
