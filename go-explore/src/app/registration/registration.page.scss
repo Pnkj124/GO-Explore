@@ -1,32 +1,49 @@
-ion-content {
-    position: relative;
-    top: 18%;
-  }
-
-  .login-form {
-    max-width: 75%;
+.input__item {
     margin: auto;
-    border: 2px solid var(--ion-color-goexplore-green);
-    margin-bottom: 20px;
+    --background: #fff;
+}
+
+.signup-bt {
+    padding: 0 20px;
+}
+
+ion-input {
+    border: 1px solid var(--ion-color-light-shade);
     margin-top: 10px;
-    border-radius: 14px;
-    // box-shadow: 1px 1px 5px 1px;
+    border-radius: 4px;
 }
 
-.login-bt {
-    max-width: 65%;
-    margin: auto;
-}
-
-ion-item{
-    margin: 10px auto;
-
-    ion-checkbox{
-        margin-right: 10px;
-    }
+.sc-ion-input-md-h {
+    padding: 4px !important;
 }
 
 .validation-errors {
-    margin-left: 60px;
-    color: red;
+    color: #eb445a;
+    margin: 4px 16px;
+}
+
+ion-label,
+.terms__label {
+    margin: auto;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    text-align: left;
+    color: #333333;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--ion-color-primary);
+}
+
+ion-toolbar {
+    padding: 0 8px;
 }
