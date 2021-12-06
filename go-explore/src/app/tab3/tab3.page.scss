@@ -1,5 +1,4 @@
-$primary :#1d805f;
-
+$primary: #1d805f;
 
 // Header Styling
 .profileHeaderTitle {
@@ -75,7 +74,6 @@ $primary :#1d805f;
   }
 
   .levelSlider {
-
     .levelSliderGraphic {
       margin: 0 auto;
       display: block;
@@ -132,10 +130,10 @@ $primary :#1d805f;
 .finePrintText {
   font-size: 15px;
   text-decoration: underline;
-  color: #5B6F7D;
+  color: #5b6f7d;
 }
 
-.profile__container{
+.profile__container {
   height: 150px;
   color: #fff;
   font-family: "Pacifico", sans-serif !important;
@@ -144,10 +142,10 @@ $primary :#1d805f;
   margin-bottom: -30px;
 }
 
-.profile__container:before{
-  content: '';
+.profile__container:before {
+  content: "";
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -163,7 +161,7 @@ $primary :#1d805f;
 //  height:40px!important;
 //}
 
-.profile__image{
+.profile__image {
   width: 120px;
   height: 120px;
   max-height: 120px;
@@ -172,42 +170,45 @@ $primary :#1d805f;
   overflow: hidden;
   margin: 30px auto 0 auto;
   border: 3px solid #fff;
-
 }
 
-input[type=file]{
-  height:120px;
-  opacity:0;
-  border:1px solid #000;
-  width:120px;
-  position:absolute;
-  margin-left:-60px;
+input[type="file"] {
+  height: 120px;
+  opacity: 0;
+  border: 1px solid #000;
+  width: 120px;
+  position: absolute;
+  margin-left: -60px;
 }
 
-.profile__heading__text{
-  margin:0;
+.profile__heading__text {
+  margin: 0;
   color: $primary;
 }
 
-.badge{
+.badge {
   font-size: 36px;
-  color:#b3b3b3;
+  color: #b3b3b3;
 }
 
-.primary-badge{
-  color:goldenrod;
+.primary-badge {
+  color: goldenrod;
 }
 
-.other__setting{
+.other__setting {
   color: #6c6c6c;
 }
 
-.image__upload__icon{
-    position: absolute;
+.image__upload__icon {
+  position: absolute;
   height: 30px;
-    bottom: 0;
-    border-radius: 50%;
-    font-size: 20px;
-    margin-left: 30px;
-    margin-bottom: 40px;
+  bottom: 0;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+.other__setting {
+  color: rgb(26, 26, 26);
 }
