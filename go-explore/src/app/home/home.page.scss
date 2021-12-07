@@ -1,17 +1,16 @@
 ion-content {
   position: relative;
-  top: 5%;
 }
 
 .welcome {
   font-weight: bold;
+  margin-top: 10%;
 }
 
 .login-form {
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 50%;
     margin: auto;
-    border: 5px solid var(--ion-color-goexplore-green);
     border-radius: 14px;
     margin-bottom: 10px;
   }
@@ -53,4 +52,25 @@ h5 span {
     height: auto;
     min-width: 22px;
   }
+}
+
+.login a {
+  color: white;
+}
+
+.ion-color-facebook {
+  --ion-color-base: var(--ion-color-facebook);
+  --ion-color-base-rgb: var(--ion-color-facebook-rgb);
+  --ion-color-contrast: var(--ion-color-facebook-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-facebook-contrast-rgb);
+  --ion-color-shade: var(--ion-color-facebook-shade);
+  --ion-color-tint: var(--ion-color-facebook-tint);
+}
+.ion-color-google {
+  --ion-color-base: var(--ion-color-google);
+  --ion-color-base-rgb: var(--ion-color-google-rgb);
+  --ion-color-contrast: var(--ion-color-google-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-google-contrast-rgb);
+  --ion-color-shade: var(--ion-color-google-shade);
+  --ion-color-tint: var(--ion-color-google-tint);
 }
