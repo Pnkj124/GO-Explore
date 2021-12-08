@@ -22,15 +22,8 @@
 
       <form [formGroup]="validationForm" (ngSubmit)="LogIn()" class="login__form">
 
-        <ion-card-subtitle>Login to your account</ion-card-subtitle>
+        <ion-card-subtitle color="primary" class="ion-text-center">Login to your account</ion-card-subtitle>
 
-
-
-        <ion-item class="login-form" lines="none">
-          <ion-label style="color: #5B6F7D;" position="floating">Email</ion-label>
-          <ion-input formControlName="Email" type="email">
-          </ion-input>
-        </ion-item>
 
         <div class="validation-errors">
           <ng-container *ngFor="let validation 
@@ -44,11 +37,10 @@
             </div>
           </ng-container>
         </div>
-
-
         <ion-item class="login-form" lines="none">
-          <ion-label style="color: #5B6F7D;" position="floating">Password</ion-label>
-          <ion-input formControlName="Password" type="Password" required></ion-input>
+          <ion-label style="color: #5B6F7D;" position="floating">Email</ion-label>
+          <ion-input formControlName="Email" type="email">
+          </ion-input>
         </ion-item>
 
         <div class="validation-errors">
@@ -63,11 +55,14 @@
             </div>
           </ng-container>
         </div>
-
+        <ion-item class="login-form" lines="none">
+          <ion-label style="color: #5B6F7D;" position="floating">Password</ion-label>
+          <ion-input formControlName="Password" type="Password" required></ion-input>
+        </ion-item>
 
         <ion-row>
           <ion-col class="login-bt">
-            <ion-button type="submit" color="light" expand="block" routerDirection="root" [disabled]="!validationForm.valid">
+            <ion-button type="submit" expand="block" routerDirection="root" [disabled]="!validationForm.valid">
               Log in</ion-button>
           </ion-col>
         </ion-row>
@@ -96,7 +91,7 @@
     </ion-col>
   </ion-row>
 
-  <ion-card-subtitle>Dont have account? <a [routerLink]="['/registration']">Sign Up</a></ion-card-subtitle>
+  <ion-card-subtitle class="ion-text-center">Dont have account? <a [routerLink]="['/registration']" style="color: white;">Sign Up</a></ion-card-subtitle>
 
 
 
