@@ -1,9 +1,23 @@
-<ion-content>
+<ion-header [translucent]="true" color="primary">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back-outline" [routerLink]="['/home']"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon name="help-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Back</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
   <ion-row>
     <ion-col size="12" class="content__center">
 
-      <ion-title class="ion-text-center">
-        <img style="max-width: 250px; margin: 10px auto;" src="../assets/img/Tourism_Logo_v4.png">
+      <ion-title class="ion-text-center logo">
+        <img style="max-width: 250px; margin: 10px auto;" src="../assets/img/go-explore-logo-white.png">
       </ion-title>
 
       <form [formGroup]="validationForm" (ngSubmit)="LogIn()" class="login__form">
@@ -53,7 +67,7 @@
 
         <ion-row>
           <ion-col class="login-bt">
-            <ion-button type="submit" color="primary" expand="block" routerDirection="root" [disabled]="!validationForm.valid">
+            <ion-button type="submit" color="light" expand="block" routerDirection="root" [disabled]="!validationForm.valid">
               Log in</ion-button>
           </ion-col>
         </ion-row>
