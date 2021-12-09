@@ -1,7 +1,7 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" color="primary">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-icon name="arrow-back-outline" [routerLink]="['/sign-in']"></ion-icon>
+      <ion-icon name="arrow-back-outline" [routerLink]="['/home']"></ion-icon>
     </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button>
@@ -14,23 +14,19 @@
 
 
 
-<ion-content>
-  <ion-row>
-    <ion-col style="margin:0 16px;">
-      <h1>Sign Up</h1>
-      <h2>Create an account so that you can save places and earn reward point on scanning QR on that
-        locations.</h2>
-    </ion-col>
-  </ion-row>
+<ion-content color="primary">
+  <ion-title class="ion-text-center logo">
+    <img style="max-width: 250px; margin: 10px auto;" src="../assets/img/go-explore-logo-white.png">
+  </ion-title>
 
 
   <form [formGroup]="validationForm" (ngSubmit)="LogIn()">
 
-    <ion-row>
+    <ion-row class="container">
       <ion-col size="12">
-        <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-label position="stacked">Username</ion-label>
-          <ion-input formControlName="Username" type="Username"></ion-input>
+        <ion-item lines="none" color="goexplore-input-background">
+          <ion-label style="color: #5B6F7D;" position="floating">Email</ion-label>
+          <ion-input formControlName="Username" type="Username" color="dark"></ion-input>
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation 
@@ -48,8 +44,7 @@
 
       <ion-col size="12">
         <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-label position="stacked">Email</ion-label>
-          <ion-input formControlName="Email" type="email"></ion-input>
+          <ion-input color="dark" formControlName="Email" type="email" placeholder="Email"></ion-input>
         </ion-item>
 
         <div class="validation-errors">
@@ -68,8 +63,7 @@
 
       <ion-col size="12">
         <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-label position="stacked">Password</ion-label>
-          <ion-input formControlName="Password" type="password"></ion-input>
+          <ion-input color="dark" formControlName="Password" type="password" placeholder="Password"></ion-input>
         </ion-item>
 
         <div class="validation-errors">
@@ -89,8 +83,7 @@
 
       <ion-col size="12">
         <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-label position="stacked">Re-Type password</ion-label>
-          <ion-input formControlName="Password" type="password"></ion-input>
+          <ion-input color="dark" formControlName="Password" type="password" placeholder="Re-Type Password"></ion-input>
         </ion-item>
 
         <div class="validation-errors">
@@ -107,10 +100,10 @@
         </div>
       </ion-col>
 
-      <ion-col size="12">
-        <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-checkbox checked="" formControlName="Terms" color="primary"></ion-checkbox>
-          <ion-text color="primary">&nbsp;&nbsp; I accept the <u>Privacy Policy</u> and <u>Terms</u>.</ion-text>
+      <ion-col size="12" class="checkbox">
+        <ion-item lines="none" color="goexplore-input-background">
+          <ion-checkbox checked="false" formControlName="Terms" color="light"></ion-checkbox>
+          <ion-text color="light">&nbsp;&nbsp; I accept the <u>Privacy Policy</u> and <u>Terms</u>.</ion-text>
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation 
@@ -127,7 +120,7 @@
       </ion-col>
 
       <ion-col class="signup-bt" size="12">
-        <ion-button type="submit" color="primary" expand="block" routerDirection="root"
+        <ion-button type="submit" color="light" expand="block" routerDirection="root"
           [disabled]="!validationForm.valid">
           Sign Up</ion-button>
       </ion-col>

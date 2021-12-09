@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 import {HttpClient} from "@angular/common/http";
-import { Tab2Page } from '../tab2/tab2.page';
 
 declare var google: any;
 @Component({
@@ -23,49 +22,8 @@ export class Tab1Page {
   @ViewChild('map', {read: ElementRef, static: false}) mapRef: ElementRef;
 
   infowindows: any = [];
-  markers: any = [
-      {
-      title: "Zealand Roskilde",
-      latitude: "55.63087610877062",
-      longitude: "12.078749778139647"
-      },
-      {
-      title: "ZBC Roskilde",
-      latitude: "55.627815858323196",
-      longitude: "12.078055085884328"
-      },
-      {
-      title: "HTX Roskilde",
-      latitude: "55.62528540644652",
-      longitude: "12.082877697551513"
-      },
-      {
-      title: "Roskilde Handelsskole",
-      latitude: "55.62659683996188",
-      longitude: "12.075673284475176"
-      },
-      {
-      title: "Roskilde Universitet",
-      latitude: "55.652251052251295",
-      longitude: "12.141006127192856"
-      },
-      {
-      title: "Himmerlev Gymnasium",
-      latitude: "55.6567060735931",
-      longitude: "12.112451329052622"
-      },
-      {
-      title: "Café Korn - Roskilde",
-      latitude: "55.64074898756519",
-      longitude: "12.076624971074732"
-      },
-      {
-      title: "Frellsen Chokolade Roskilde",
-      latitude: "55.64089204000676",
-      longitude: "12.07916099965007"
-      }
-    ];
-
+  markers: any;
+  
   constructor(
     private geolocation: Geolocation,
     private http: HttpClient,
@@ -73,21 +31,21 @@ export class Tab1Page {
   ) {}
 
   ngOnInit() {
-    this.geoInformation(this.markers);
     this.http.get("http://localhost:3000/api/users/locations").subscribe((response : any) => {
-      console.log(response)
+      this.markers = response.locations
     });
+    this.geoInformation();
   }
 
-  geoInformation(markers) {
+  geoInformation() {
     this.geolocation.getCurrentPosition().then((data) => {
       this.lat = data.coords.latitude;
       this.long = data.coords.longitude;
       this.accuracy = data.coords.accuracy;
-      markers.push({
-        title: "Your current location",
-        latitude: data.coords.latitude,
-        longitude: data.coords.longitude
+      this.markers.push({
+        name: "Your current location",
+        lat: data.coords.latitude,
+        lon: data.coords.longitude
       })
      });
 
@@ -100,13 +58,13 @@ export class Tab1Page {
 
   addMarkersToMap(markers){
     for (let marker of markers) {
-      let position = new google.maps.LatLng(marker.latitude, marker.longitude);
+      let position = new google.maps.LatLng(marker.lat, marker.lon);
 
       let mapMarker = new google.maps.Marker({
         position: position,
-        title: marker.title,
-        latitude: marker.latitude,
-        longitude: marker.longitude,
+        title: marker.name,
+        latitude: marker.lat,
+        longitude: marker.lon,
         animation: google.maps.Animation.DROP
       });
       mapMarker.setMap(this.map);

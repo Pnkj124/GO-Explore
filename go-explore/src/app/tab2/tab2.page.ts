@@ -1,6 +1,10 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
+import {HttpClient} from "@angular/common/http";
+
+import { Storage } from '@ionic/storage-angular';
+
 import jsQR from 'jsqr';
 
 @Component({ 
@@ -10,7 +14,7 @@ import jsQR from 'jsqr';
 })
 export class Tab2Page {
 
-  scanActive = true; 
+  scanActive = false; 
   scanResult = null; 
   @ViewChild('video', { static: false }) video: ElementRef;
   @ViewChild('canvas', { static: false }) canvas: ElementRef;
@@ -21,7 +25,15 @@ export class Tab2Page {
 
   loading: HTMLIonLoadingElement;
 
-  constructor(private toastCtrl: ToastController, private loadingCtrl: LoadingController) {}
+  constructor(
+    private loadingCtrl: LoadingController, 
+    private http: HttpClient,
+    private storage: Storage
+    ) {}
+
+    async ngOnInit() {
+      await this.storage.create();
+    }
 
   ngAfterViewInit() {
     this.videoElement = this.video.nativeElement;
@@ -30,9 +42,12 @@ export class Tab2Page {
   }
 
   async startScan() {
+    this.scanActive = true;
+    if(this.scanActive == true){
     const stream = await navigator.mediaDevices.getUserMedia({
       video: {facingMode: 'environment'},
     });
+
     this.videoElement.srcObject = stream;
     this.videoElement.setAttribute('playsinline', true); 
     this.videoElement.play();
@@ -40,6 +55,7 @@ export class Tab2Page {
     this.loading = await this.loadingCtrl.create({});
     await this.loading.present();
     requestAnimationFrame(this.scan.bind(this));
+    }
   }
 
   async scan() {
@@ -78,15 +94,21 @@ export class Tab2Page {
       if (code) {
         this.scanActive = false;
         this.scanResult = code.data;
-        this.showQrToast();
-        
-      } else {
+        const email = await this.storage.get('email')
+        this.http.post("http://localhost:3000/api/users/userScan", 
+      {
+        qrvalue: this.scanResult,
+        email: email
+      }).subscribe((response : any) => {
+        console.log(response)
+      });
+      } 
+      
+      else {
         if (this.scanActive) {
           requestAnimationFrame(this.scan.bind(this));
         }
-        requestAnimationFrame(this.scan.bind(this));
       }
-
 
     } else {
       requestAnimationFrame(this.scan.bind(this));
@@ -99,22 +121,6 @@ export class Tab2Page {
 
   stopScan() {
     this.scanActive = false;
-  }
 
-  async showQrToast() {
-    const toast = await this.toastCtrl.create({
-      message: `Open ${this.scanResult}?`,
-      position: 'top',
-      buttons: [
-        {
-          text: 'Open',
-          handler: () => {
-            window.open(this.scanResult, '_system', 'location=yes');
-          }
-        }
-      ]
-    });
-    toast.present();
   }
-
 }

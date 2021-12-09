@@ -18,6 +18,7 @@ export class Tab3Page {
   username: any = '';
   level: any = 12;
   points: any = 1178;
+  images: any;
 
   private file: File;
 
@@ -33,9 +34,8 @@ export class Tab3Page {
 
     await this.loadProfilePicture(header);
 
-    this.http.get(`${this.baseUrl}/api/users/badges`, {headers: header, responseType: 'blob'}).subscribe((blob : any) => {
-      let objectURL = URL.createObjectURL(blob);
-      this.badgeImage = objectURL;
+    this.http.get(`${this.baseUrl}/api/users/badges`, {headers: header}).subscribe((response: any) => {
+      this.images = response.data.map(({​​​​​​​​​ badge_image }​​​​​​​​​) => badge_image);
     });
 
     this.http.get(`${this.baseUrl}/api/users/details`, {headers: header}).subscribe((response : any) => {
