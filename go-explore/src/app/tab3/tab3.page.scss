@@ -1,11 +1,20 @@
-$primary: #1d805f;
-
 // Header Styling
+#background-content {
+  --background: var(--ion-color-goexplore-green) !important;
+}
+
 .profileHeaderTitle {
-  color: #000;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 30px;
   margin: 25px 15px 25px auto;
+}
+
+ion-toolbar {
+  --background: var(--ion-color-goexplore-green);
+  color: rgb(255, 255, 255);
+  padding: 0 8px;
+  font-size: 30px;
 }
 
 .headerDomkirkeIcon {
@@ -33,15 +42,19 @@ $primary: #1d805f;
 .pfpPlaceholder {
   max-width: 50%;
   margin: 15px auto 0 auto;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 140px;
+  border-bottom-left-radius: 130px;
+  border-bottom-right-radius: 80px;
+  overflow: hidden;
 }
 
 // Level container and sub items styling
 .levelContainer {
-  background: var(--ion-color-goexplore-green);
+  color: var(--ion-color-goexplore-green);
   height: auto;
   padding-bottom: 14px;
   max-width: 700px;
-  margin: 20px auto 10px auto;
   display: block;
 
   .levelDisplay {
@@ -58,7 +71,7 @@ $primary: #1d805f;
       font-size: 28px;
       margin: 5px auto;
       display: block;
-      color: var(--ion-color-goexplore-white);
+      color: var(--ion-color-goexplore-green);
     }
   }
 
@@ -69,7 +82,7 @@ $primary: #1d805f;
     p {
       margin: 0 auto;
       font-size: 14px;
-      color: var(--ion-color-goexplore-white);
+      color: var(--ion-color-goexplore-green);
     }
   }
 
@@ -84,9 +97,8 @@ $primary: #1d805f;
 .userPassTitle {
   font-size: 28px;
   font-weight: 400;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  border-bottom: black solid 2px;
+  padding: 10px 0;
+  text-transform: uppercase;
 }
 
 .changeTxt {
@@ -97,9 +109,16 @@ $primary: #1d805f;
 }
 
 .achieveTitle {
-  margin-top: 25px;
+  padding: 10px 0;
   font-size: 25px;
   font-weight: bold;
+  background: var(--ion-color-goexplore-green);
+  color: var(--ion-color-goexplore-white);
+}
+
+.badges {
+  background: #fff;
+  padding: 5px 0;
 }
 
 .badgesIcon {
@@ -112,103 +131,39 @@ $primary: #1d805f;
 }
 
 .locationTitle {
-  margin-top: 25px;
+  padding: 10px 0;
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 20px;
+  background: var(--ion-color-goexplore-green);
+  color: var(--ion-color-goexplore-white);
 }
 
 .lastLocationImages {
-  //display: block;
-  //margin: 0 auto;
-  //max-width: 80%;
-  //border-bottom: black solid 2px;
-  //padding-bottom: 20px;
-  //margin-bottom: 75px;
+  display: block;
+  margin: 0 auto;
+}
+
+.last__visited__locations {
+  background: var(--ion-color-goexplore-green);
+  color: var(--ion-color-goexplore-white);
+  border-bottom: #fff solid 2px;
+  padding: 0 24px;
+}
+
+.footer {
+  background: var(--ion-color-goexplore-green);
+  color: var(--ion-color-goexplore-white);
+  padding: 35px 0;
 }
 
 .finePrintText {
   font-size: 15px;
   text-decoration: underline;
-  color: #5b6f7d;
+  color: #ffffff;
 }
 
-.profile__container {
-  height: 150px;
-  color: #fff;
-  font-family: "Pacifico", sans-serif !important;
-  position: relative;
-  text-align: center;
-  margin-bottom: -30px;
-}
-
-.profile__container:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: $primary;
-  border-radius: 0 0 50% 50%/0 0 100% 100%;
-  transform: scaleX(1.5);
-  margin-top: -55px;
-  z-index: -1;
-}
-
-//::ng-deep ion-img img {
-//  width:40px!important;
-//  height:40px!important;
-//}
-
-.profile__image {
-  width: 120px;
-  height: 120px;
-  max-height: 120px;
-  min-height: 120px;
-  border-radius: 50% !important;
-  overflow: hidden;
-  margin: 30px auto 0 auto;
-  border: 3px solid #fff;
-}
-
-input[type="file"] {
-  height: 120px;
-  opacity: 0;
-  border: 1px solid #000;
-  width: 120px;
-  position: absolute;
-  margin-left: -60px;
-}
-
-.profile__heading__text {
-  margin: 0;
-  color: $primary;
-}
-
-.badge {
-  font-size: 36px;
-  color: #b3b3b3;
-}
-
-.primary-badge {
-  color: goldenrod;
-}
-
-.other__setting {
-  color: #6c6c6c;
-}
-
-.image__upload__icon {
-  position: absolute;
-  height: 30px;
-  bottom: 0;
-  border-radius: 50%;
-  font-size: 20px;
-  margin-left: 30px;
-  margin-bottom: 40px;
-}
-
-.other__setting {
-  color: rgb(26, 26, 26);
+.profile__section {
+  background: var(--ion-color-goexplore-green);
+  padding: 10px 0;
+  color: #ffffff;
 }
