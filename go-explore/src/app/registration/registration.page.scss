@@ -5,7 +5,6 @@
 .signup-bt {
   padding: 0 20px;
   ion-button {
-    width: 50%;
     margin: auto;
   }
 }
@@ -13,8 +12,8 @@
 ion-input {
   border: 1px solid var(--ion-color-light-shade);
   margin-top: 10px;
-  border-radius: 10px;
-  background-color: #bcdbd9;
+  border-radius: 4px;
+  background-color: #ffffff;
 }
 
 .checkbox {
@@ -23,7 +22,7 @@ ion-input {
 }
 
 .sc-ion-input-md-h {
-  padding: 8px 14px !important;
+  padding: 4px 8px !important;
 }
 
 .validation-errors {
@@ -49,5 +48,10 @@ h2 {
 }
 
 ion-toolbar {
-  padding: 0 8px;
+  padding: 0 16px;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
 }

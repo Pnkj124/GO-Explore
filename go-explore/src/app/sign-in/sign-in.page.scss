@@ -1,18 +1,21 @@
 .logo {
         margin: 10%;
-      }
+}
 
 ion-item {
-        box-shadow: 1px 1px 5px rgb(236, 236, 236);
+        box-shadow: 1px 1px 5px var(--ion-color-goexplore-green);
+        margin-top: 4px;
+}
+
+ion-toolbar {
+        padding: 0 16px;
 }
 
 .login-form {
         max-width: 75%;
-        margin: auto;
+        margin: 8px auto 16px auto;
         --background: #fff;
-        margin-bottom: 20px;
         border-radius: 8px;
-        color: white;
 }
 
 .login-bt {
@@ -30,11 +33,11 @@ ion-button {
         margin: 4px 0;
 }
 
-ion-card-subtitle {
-        margin: 16px 0;
+.subtitle {
+        max-width: 75%;
+        margin: 16px auto;
         font-size: medium;
         color: #fff;
-        margin-left: 55px;
         font-weight: normal;
 }
 
@@ -44,7 +47,8 @@ ion-card-subtitle {
 
 .validation-errors {
         text-align: left;
-        margin-left: 50px;
+        max-width: 75%;
+        margin: auto;
 }
 
 h5 {
@@ -67,7 +71,7 @@ h5 span {
 
 .social__icon {
         --background: #fff;
-        --box-shadow: 1px 1px 5px rgb(236, 236, 236);
+        --box-shadow: 1px 1px 5px var(--ion-color-goexplore-green);
         font-size: medium;
 }
 
@@ -81,4 +85,8 @@ h5 span {
 
 .icon__apple {
         color: rgb(47, 47, 47);
+}
+
+.link {
+        color: white;
 }

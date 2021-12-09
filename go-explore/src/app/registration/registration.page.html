@@ -24,9 +24,9 @@
 
     <ion-row class="container">
       <ion-col size="12">
-        <ion-item lines="none" color="goexplore-input-background">
-          <ion-label style="color: #5B6F7D;" position="floating">Email</ion-label>
-          <ion-input formControlName="Username" type="Username" color="dark"></ion-input>
+        <ion-item class="input__item" lines="none" color="goexplore-input-background">
+          <ion-input formControlName="Username" type="Username" color="dark" position="floating" placeholder="Username">
+          </ion-input>
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation 
@@ -44,7 +44,8 @@
 
       <ion-col size="12">
         <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-input color="dark" formControlName="Email" type="email" placeholder="Email"></ion-input>
+          <ion-input color="dark" formControlName="Email" type="email" position="floating" placeholder="Email">
+          </ion-input>
         </ion-item>
 
         <div class="validation-errors">
@@ -63,7 +64,8 @@
 
       <ion-col size="12">
         <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-input color="dark" formControlName="Password" type="password" placeholder="Password"></ion-input>
+          <ion-input color="dark" formControlName="Password" type="password" position="floating" placeholder="Password">
+          </ion-input>
         </ion-item>
 
         <div class="validation-errors">
@@ -83,7 +85,8 @@
 
       <ion-col size="12">
         <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-input color="dark" formControlName="Password" type="password" placeholder="Re-Type Password"></ion-input>
+          <ion-input color="dark" formControlName="Password" type="password" position="floating"
+            placeholder="Re-Type Password"></ion-input>
         </ion-item>
 
         <div class="validation-errors">

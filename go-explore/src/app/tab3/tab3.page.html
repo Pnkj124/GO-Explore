@@ -53,17 +53,13 @@
   <!-- Badges & achivements -->
   <ion-title class="ion-text-center achieveTitle">BADGES & ACHIEVEMENTS</ion-title>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>BADGES & ACHIEVEMENTS</ion-card-subtitle>
-    </ion-card-header>
+  <!-- <ng-container *ngFor="let image of images">
+    <img src='{{ "../assets/badges/" + image }}'>
+  </ng-container> -->
 
-    <ion-card-content class="badges">
-      <ng-container *ngFor="let image of images">
-        <img src='{{ "../assets/badges/" + image }}'>
-      </ng-container>
-    </ion-card-content>
-  </ion-card>
+  <ion-img [src]="badgeImage"></ion-img>
+
+  <img [src]="badgeImage" alt="badge">
 
   <!-- Last visited locations -->
   <ion-title class="ion-text-center locationTitle">LAST VISITED LOCATIONS</ion-title>

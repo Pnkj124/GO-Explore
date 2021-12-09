@@ -22,7 +22,7 @@
 
       <form [formGroup]="validationForm" (ngSubmit)="LogIn()" class="login__form">
 
-        <ion-card-subtitle>Login to your account</ion-card-subtitle>
+        <ion-card-subtitle class="subtitle">Login to your account</ion-card-subtitle>
 
 
 
@@ -67,7 +67,8 @@
 
         <ion-row>
           <ion-col class="login-bt">
-            <ion-button type="submit" color="light" expand="block" routerDirection="root" [disabled]="!validationForm.valid">
+            <ion-button type="submit" color="light" expand="block" routerDirection="root"
+              [disabled]="!validationForm.valid">
               Log in</ion-button>
           </ion-col>
         </ion-row>
@@ -96,7 +97,8 @@
     </ion-col>
   </ion-row>
 
-  <ion-card-subtitle>Dont have account? <a [routerLink]="['/registration']">Sign Up</a></ion-card-subtitle>
+  <ion-card-subtitle class="subtitle">Don't have account? <a [routerLink]="['/registration']" class="link">Sign Up</a>
+  </ion-card-subtitle>
 
 
 
