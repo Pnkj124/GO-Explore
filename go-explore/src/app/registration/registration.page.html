@@ -20,31 +20,23 @@
   </ion-title>
 
 
-  <form [formGroup]="validationForm" (ngSubmit)="LogIn()">
-
-    <ion-row class="container">
-      <ion-col size="12">
-        <ion-item lines="none" color="goexplore-input-background">
-          <ion-label style="color: #5B6F7D;" position="floating">Email</ion-label>
-          <ion-input formControlName="Username" type="Username" color="dark"></ion-input>
-        </ion-item>
-        <div class="validation-errors">
-          <ng-container *ngFor="let validation 
-                                    of validationMessages.Username">
-            <div class="error-message" *ngIf="validationForm.get('Username')
-                     .hasError(validation.type) 
-                     && (validationForm.get('Username').dirty 
-                     || validationForm.get('Username').touched)">
-              <ion-icon name="flash"></ion-icon>
-              {{ validation.message }}
-            </div>
-          </ng-container>
+  <form [formGroup]="validationForm" (ngSubmit)="LogIn()" class="login__form">
+ 
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation 
+                                of validationMessages.Username">
+        <div class="error-message" *ngIf="validationForm.get('Username')
+                 .hasError(validation.type) 
+                 && (validationForm.get('Username').dirty 
+                 || validationForm.get('Username').touched)">
+          <ion-icon name="flash"></ion-icon>
+          {{ validation.message }}
         </div>
-      </ion-col>
-
-      <ion-col size="12">
-        <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-input color="dark" formControlName="Email" type="email" placeholder="Email"></ion-input>
+      </ng-container>
+    </div>
+        <ion-item lines="none" class="login-form">
+          <ion-label style="color: #5B6F7D;" position="floating">Username</ion-label>
+          <ion-input formControlName="Username" type="Username"></ion-input>
         </ion-item>
 
         <div class="validation-errors">
@@ -59,11 +51,9 @@
             </div>
           </ng-container>
         </div>
-      </ion-col>
-
-      <ion-col size="12">
-        <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-input color="dark" formControlName="Password" type="password" placeholder="Password"></ion-input>
+        <ion-item class="login-form" lines="none">
+          <ion-label style="color: #5B6F7D;" position="floating">Email</ion-label>
+          <ion-input color="dark" formControlName="Email" type="email"></ion-input>
         </ion-item>
 
         <div class="validation-errors">
@@ -78,12 +68,9 @@
             </div>
           </ng-container>
         </div>
-
-      </ion-col>
-
-      <ion-col size="12">
-        <ion-item class="input__item" lines="none" color="goexplore-input-background">
-          <ion-input color="dark" formControlName="Password" type="password" placeholder="Re-Type Password"></ion-input>
+        <ion-item class="login-form" lines="none">
+          <ion-label style="color: #5B6F7D;" position="floating">Password</ion-label>
+          <ion-input color="dark" formControlName="Password" type="password"></ion-input>
         </ion-item>
 
         <div class="validation-errors">
@@ -98,13 +85,11 @@
             </div>
           </ng-container>
         </div>
-      </ion-col>
-
-      <ion-col size="12" class="checkbox">
-        <ion-item lines="none" color="goexplore-input-background">
-          <ion-checkbox checked="false" formControlName="Terms" color="light"></ion-checkbox>
-          <ion-text color="light">&nbsp;&nbsp; I accept the <u>Privacy Policy</u> and <u>Terms</u>.</ion-text>
+        <ion-item class="login-form" lines="none">
+          <ion-label style="color: #5B6F7D;" position="floating">Re-Type Password</ion-label>
+          <ion-input color="dark" formControlName="Password" type="password"></ion-input>
         </ion-item>
+
         <div class="validation-errors">
           <ng-container *ngFor="let validation 
                                                     of validationMessages.Terms">
@@ -117,14 +102,18 @@
             </div>
           </ng-container>
         </div>
-      </ion-col>
+        <ion-item class="terms" lines="none" color="goexplore-input-background">
+          <ion-checkbox checked="false" formControlName="Terms" color="light"></ion-checkbox>
+          <ion-text color="light">&nbsp; I accept the <u>Privacy Policy</u> and <u>Terms</u>.</ion-text>
+        </ion-item>
 
-      <ion-col class="signup-bt" size="12">
-        <ion-button type="submit" color="light" expand="block" routerDirection="root"
+        <ion-row>
+          <ion-col class="login-bt">
+        <ion-button color="white" type="submit" expand="block" routerDirection="root"
           [disabled]="!validationForm.valid">
           Sign Up</ion-button>
-      </ion-col>
-    </ion-row>
+        </ion-col>
+        </ion-row>
 
   </form>
 </ion-content>
