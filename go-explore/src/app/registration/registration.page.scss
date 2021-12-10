@@ -14,6 +14,7 @@ ion-input {
   margin-top: 10px;
   border-radius: 4px;
   background-color: #ffffff;
+
 }
 
 .checkbox {
@@ -24,27 +25,23 @@ ion-input {
 .sc-ion-input-md-h {
   padding: 4px 8px !important;
 }
-
 .validation-errors {
   color: #eb445a;
-  margin: 4px 16px;
+  width: 75%;
+  margin: auto;
+  padding: 5px 0;
 }
 
-h1 {
-  font-family: Montserrat;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 800;
-  text-align: left;
-  color: #333333;
+ion-toolbar {
+  padding: 0 8px;
 }
 
-h2 {
-  font-family: Montserrat;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  color: var(--ion-color-primary);
+.login-form {
+  max-width: 75%;
+  margin: auto;
+  --background: #fff;
+  margin-bottom: 5px;
+  border-radius: 8px;
 }
 
 ion-toolbar {
@@ -55,3 +52,4 @@ ion-toolbar {
   max-width: 80%;
   margin: 0 auto;
 }
+

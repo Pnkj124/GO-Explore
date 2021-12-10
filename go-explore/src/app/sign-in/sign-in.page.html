@@ -4,9 +4,6 @@
       <ion-icon name="arrow-back-outline" [routerLink]="['/home']"></ion-icon>
     </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button>
-        <ion-icon name="help-circle-outline"></ion-icon>
-      </ion-button>
     </ion-buttons>
     <ion-title>Back</ion-title>
   </ion-toolbar>
@@ -25,13 +22,6 @@
         <ion-card-subtitle class="subtitle">Login to your account</ion-card-subtitle>
 
 
-
-        <ion-item class="login-form" lines="none">
-          <ion-label style="color: #5B6F7D;" position="floating">Email</ion-label>
-          <ion-input formControlName="Email" type="email">
-          </ion-input>
-        </ion-item>
-
         <div class="validation-errors">
           <ng-container *ngFor="let validation 
                                     of validationMessages.Email">
@@ -44,11 +34,10 @@
             </div>
           </ng-container>
         </div>
-
-
         <ion-item class="login-form" lines="none">
-          <ion-label style="color: #5B6F7D;" position="floating">Password</ion-label>
-          <ion-input formControlName="Password" type="Password" required></ion-input>
+          <ion-label style="color: #5B6F7D;" position="floating">Email</ion-label>
+          <ion-input formControlName="Email" type="email">
+          </ion-input>
         </ion-item>
 
         <div class="validation-errors">
@@ -63,7 +52,10 @@
             </div>
           </ng-container>
         </div>
-
+        <ion-item class="login-form" lines="none">
+          <ion-label style="color: #5B6F7D;" position="floating">Password</ion-label>
+          <ion-input formControlName="Password" type="Password" required></ion-input>
+        </ion-item>
 
         <ion-row>
           <ion-col class="login-bt">
