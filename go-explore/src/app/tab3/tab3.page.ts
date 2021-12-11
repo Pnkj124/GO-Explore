@@ -35,7 +35,7 @@ export class Tab3Page {
     await this.loadProfilePicture(header);
 
     this.http.get(`${this.baseUrl}/api/users/badges`, {headers: header}).subscribe((response: any) => {
-      this.images = response.data.map(item => this.baseUrl+'/'+item);
+      this.images = response.data.badges.map(item => this.baseUrl+'/'+item);
     });
 
     this.http.get(`${this.baseUrl}/api/users/details`, {headers: header}).subscribe((response : any) => {
