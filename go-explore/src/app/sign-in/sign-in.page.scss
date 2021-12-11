@@ -1,22 +1,21 @@
 .logo {
-        margin: 10%;
+  margin: 10%;
 }
 
 ion-item {
-        box-shadow: 1px 1px 5px var(--ion-color-goexplore-green);
-        margin-top: 4px;
+  box-shadow: 1px 1px 5px var(--ion-color-goexplore-green);
+  margin-top: 4px;
 }
 
 ion-toolbar {
-        padding: 0 16px;
+  padding: 0 16px;
 }
 
 .login-form {
-        max-width: 75%;
-        margin: 8px auto 16px auto;
-        --background: #fff;
-        border-radius: 8px;
-
+  max-width: 75%;
+  margin: 8px auto 16px auto;
+  --background: #fff;
+  border-radius: 8px;
 }
 
 .login-bt {
@@ -37,11 +36,11 @@ ion-button {
 }
 
 .subtitle {
-        max-width: 75%;
-        margin: 16px auto;
-        font-size: medium;
-        color: #fff;
-        font-weight: normal;
+  max-width: 75%;
+  margin: 16px auto;
+  font-size: medium;
+  color: #fff;
+  font-weight: normal;
 }
 
 .login__form {
@@ -49,9 +48,9 @@ ion-button {
 }
 
 .validation-errors {
-        text-align: left;
-        max-width: 75%;
-        margin: auto;
+  text-align: left;
+  max-width: 75%;
+  margin: auto;
 }
 
 h5 {
@@ -73,10 +72,9 @@ h5 span {
 }
 
 .social__icon {
-        --background: #fff;
-        --box-shadow: 1px 1px 5px var(--ion-color-goexplore-green);
-        font-size: medium;
-
+  --background: #fff;
+  --box-shadow: 1px 1px 5px var(--ion-color-goexplore-green);
+  font-size: medium;
 }
 
 .icon__google {
@@ -87,8 +85,6 @@ h5 span {
   color: #2e2eff;
 }
 
-.icon__apple {
-
 .link {
-        color: white;
+  color: white;
 }

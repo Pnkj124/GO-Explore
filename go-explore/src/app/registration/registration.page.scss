@@ -2,19 +2,18 @@
   margin: 10%;
 }
 
-.signup-bt {
-  padding: 0 20px;
-  ion-button {
-    margin: auto;
-  }
+.login-bt {
+  max-width: 75%;
+  margin: 8px auto;
+  padding: 0 !important;
 }
 
-ion-input {
-  border: 1px solid var(--ion-color-light-shade);
-  margin-top: 10px;
-  border-radius: 4px;
-  background-color: #ffffff;
+ion-button {
+  height: 48px;
+}
 
+.login__form {
+  margin-top: 48px;
 }
 
 .checkbox {
@@ -22,9 +21,6 @@ ion-input {
   justify-content: center;
 }
 
-.sc-ion-input-md-h {
-  padding: 4px 8px !important;
-}
 .validation-errors {
   color: #eb445a;
   width: 75%;
@@ -44,12 +40,7 @@ ion-toolbar {
   border-radius: 8px;
 }
 
-ion-toolbar {
-  padding: 0 16px;
+.terms {
+  max-width: 82%;
+  margin: auto;
 }
-
-.container {
-  max-width: 80%;
-  margin: 0 auto;
-}
-

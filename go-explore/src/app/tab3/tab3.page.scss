@@ -1,6 +1,6 @@
 // Header Styling
 #background-content {
-  --background: var(--ion-color-goexplore-green) !important;
+  --background: var(--ion-background-primary) !important;
 }
 
 .profileHeaderTitle {
@@ -11,7 +11,7 @@
 }
 
 ion-toolbar {
-  --background: var(--ion-color-goexplore-green);
+  --background: var(--ion-background-primary);
   color: rgb(255, 255, 255);
   padding: 0 8px;
   font-size: 30px;
@@ -40,12 +40,13 @@ ion-toolbar {
 
 // Profile picture styling
 .pfpPlaceholder {
-  max-width: 50%;
+  max-width: 200px;
+  height: auto;
   margin: 15px auto 0 auto;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 140px;
-  border-bottom-left-radius: 130px;
-  border-bottom-right-radius: 80px;
+  border-top-left-radius: 105px;
+  border-top-right-radius: 143px;
+  border-bottom-left-radius: 156px;
+  border-bottom-right-radius: 101px;
   overflow: hidden;
 }
 
@@ -112,8 +113,8 @@ ion-toolbar {
   padding: 10px 0;
   font-size: 25px;
   font-weight: bold;
-  background: var(--ion-color-goexplore-green);
-  color: var(--ion-color-goexplore-white);
+  background: var(--ion-background-primary);
+  color: #fff;
 }
 
 .badges {
@@ -134,8 +135,8 @@ ion-toolbar {
   padding: 10px 0;
   font-size: 25px;
   font-weight: bold;
-  background: var(--ion-color-goexplore-green);
-  color: var(--ion-color-goexplore-white);
+  background: var(--ion-background-primary);
+  color: #fff;
 }
 
 .lastLocationImages {
@@ -144,15 +145,15 @@ ion-toolbar {
 }
 
 .last__visited__locations {
-  background: var(--ion-color-goexplore-green);
-  color: var(--ion-color-goexplore-white);
+  background: var(--ion-background-primary);
+  color: #fff;
   border-bottom: #fff solid 2px;
   padding: 0 24px;
 }
 
 .footer {
-  background: var(--ion-color-goexplore-green);
-  color: var(--ion-color-goexplore-white);
+  background: var(--ion-background-primary);
+  color: #fff;
   padding: 35px 0;
 }
 
@@ -163,14 +164,17 @@ ion-toolbar {
 }
 
 .profile__section {
-  background: var(--ion-color-goexplore-green);
+  background: var(--ion-background-primary);
   padding: 10px 0;
   color: #ffffff;
 }
 
-.badges{
-
-  img{
+.badges {
+  img {
     width: 25%;
   }
+}
+ion-img {
+  width: fit-content;
+  margin: auto;
 }
