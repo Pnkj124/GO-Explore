@@ -10,7 +10,7 @@
     <form #form="ngForm">
       <input type="file" (change)="onFileChange($event)"/>
       <ion-img [src]="image" alt="alt" class="profile__image"></ion-img>
-      <ion-badge color="primary" class="image__upload__icon" (click)="submitForm()">
+      <ion-badge color="primary" class="image__upload__icon">
         <ion-icon name="camera"></ion-icon>
       </ion-badge>
     </form>

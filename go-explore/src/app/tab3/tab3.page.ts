@@ -41,8 +41,9 @@ export class Tab3Page{
 
   }
 
-  onFileChange(fileChangeEvent) {
+  async onFileChange(fileChangeEvent) {
     this.file = fileChangeEvent.target.files[0];
+     await this.submitForm();
   }
 
   async loadProfilePicture(header){

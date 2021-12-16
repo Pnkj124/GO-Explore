@@ -159,12 +159,14 @@ $primary: #1d805f;
 }
 
 input[type="file"] {
-  height: 120px;
+  height: 31px;
   opacity: 0;
   border: 1px solid #000;
-  width: 120px;
+  width: 31px;
   position: absolute;
-  margin-left: -60px;
+  margin-left: 27px;
+  margin-top: 80px;
+  z-index: 1;
 }
 
 .profile__heading__text {
