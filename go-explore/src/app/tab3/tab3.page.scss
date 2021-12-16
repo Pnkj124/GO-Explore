@@ -118,15 +118,6 @@ $primary: #1d805f;
   margin-bottom: 20px;
 }
 
-.lastLocationImages {
-  //display: block;
-  //margin: 0 auto;
-  //max-width: 80%;
-  //border-bottom: black solid 2px;
-  //padding-bottom: 20px;
-  //margin-bottom: 75px;
-}
-
 .finePrintText {
   font-size: 15px;
   text-decoration: underline;
@@ -155,11 +146,6 @@ $primary: #1d805f;
   margin-top: -55px;
   z-index: -1;
 }
-
-//::ng-deep ion-img img {
-//  width:40px!important;
-//  height:40px!important;
-//}
 
 .profile__image {
   width: 120px;
@@ -213,9 +199,8 @@ input[type="file"] {
   color: rgb(26, 26, 26);
 }
 
-.badges{
-
-  img{
+.badges {
+  img {
     width: 25%;
   }
 }
