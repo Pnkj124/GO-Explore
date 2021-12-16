@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 import {HttpClient} from "@angular/common/http";
+import {Storage} from "@ionic/storage-angular";
+import {environment} from "../../environments/environment";
 
 declare var google: any;
 @Component({
@@ -13,25 +15,28 @@ declare var google: any;
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  lat: any; 
+  lat: any;
   long: any;
   address: any;
   accuracy: any;
-  
+
   map: any;
   @ViewChild('map', {read: ElementRef, static: false}) mapRef: ElementRef;
 
   infowindows: any = [];
   markers: any;
-  
+
   constructor(
     private geolocation: Geolocation,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private storage: Storage
   ) {}
 
-  ngOnInit() {
-    this.http.get("http://localhost:3000/api/users/locations").subscribe((response : any) => {
+  async ngOnInit() {
+    const userLocationUrl = environment.apiUrl+"api/users/locations";
+
+    this.http.get(userLocationUrl).subscribe((response : any) => {
       this.markers = response.locations
     });
     this.geoInformation();
@@ -48,8 +53,6 @@ export class Tab1Page {
         lon: data.coords.longitude
       })
      });
-
-     //console.log('from here ', this.geolocation.getCurrentPosition().then((data) => {data.coords.latitude}));
   }
 
   ionViewDidEnter() {
@@ -75,8 +78,8 @@ export class Tab1Page {
   addInfoWindowToMarker(marker) {
     let infoWindowContent = '<div id="content">' +
                             '<h2 id="firstHeading" class="firstHeading">' + marker.title + '</h2>' +
-                            '<p>Latitude: ' + marker.latitude + '</p>' + 
-                            '<p>Longitude: ' + marker.longitude + '</p>' + 
+                            '<p>Latitude: ' + marker.latitude + '</p>' +
+                            '<p>Longitude: ' + marker.longitude + '</p>' +
                             '<ion-button id="navigate">Go scan</ion-button>' +
                             '</div>';
 

@@ -6,16 +6,18 @@ import {HttpClient} from "@angular/common/http";
 import { Storage } from '@ionic/storage-angular';
 
 import jsQR from 'jsqr';
+import {Router} from "@angular/router";
+import {environment} from "../../environments/environment";
 
-@Component({ 
+@Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
 
-  scanActive = false; 
-  scanResult = null; 
+  scanActive = false;
+  scanResult = null;
   @ViewChild('video', { static: false }) video: ElementRef;
   @ViewChild('canvas', { static: false }) canvas: ElementRef;
 
@@ -26,13 +28,12 @@ export class Tab2Page {
   loading: HTMLIonLoadingElement;
 
   constructor(
-    private loadingCtrl: LoadingController, 
+    private loadingCtrl: LoadingController,
     private http: HttpClient,
-    private storage: Storage
-    ) {}
+    private storage: Storage,
+    private router: Router) {}
 
     async ngOnInit() {
-      await this.storage.create();
     }
 
   ngAfterViewInit() {
@@ -49,7 +50,7 @@ export class Tab2Page {
     });
 
     this.videoElement.srcObject = stream;
-    this.videoElement.setAttribute('playsinline', true); 
+    this.videoElement.setAttribute('playsinline', true);
     this.videoElement.play();
 
     this.loading = await this.loadingCtrl.create({});
@@ -59,13 +60,13 @@ export class Tab2Page {
   }
 
   async scan() {
-    console.log ('SCAN'); 
+    console.log ('SCAN');
 
     if (this.videoElement.readyState === this.videoElement.HAVE_ENOUGH_DATA) {
       if (this.loading){
         await this.loading.dismiss();
         this.loading = null;
-        this.scanActive = true; 
+        this.scanActive = true;
       }
 
       this.canvasElement.height = this.videoElement.videoHeight;
@@ -95,15 +96,15 @@ export class Tab2Page {
         this.scanActive = false;
         this.scanResult = code.data;
         const email = await this.storage.get('email')
-        this.http.post("http://localhost:3000/api/users/userScan", 
+        this.http.post(`${environment.apiUrl}/api/users/userScan`,
       {
-        qrvalue: this.scanResult,
+        qrCode: this.scanResult,
         email: email
       }).subscribe((response : any) => {
         console.log(response)
       });
-      } 
-      
+      }
+
       else {
         if (this.scanActive) {
           requestAnimationFrame(this.scan.bind(this));
@@ -117,7 +118,7 @@ export class Tab2Page {
 
   reset()  {
     this.scanResult = null;
-  } 
+  }
 
   stopScan() {
     this.scanActive = false;
